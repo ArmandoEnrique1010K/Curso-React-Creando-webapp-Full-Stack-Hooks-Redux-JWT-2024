@@ -173,7 +173,7 @@ export const InvoiceApp = () => {
                                 value={price}
                                 placeholder="Precio"
                                 className="form-control m-3"
-                                onChange={onInputChange} />
+                                onChange={event => onInputChange(event)} />
                             <input
                                 type="text"
                                 name="quantity"
