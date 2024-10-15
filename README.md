@@ -44,4 +44,26 @@ Introduce el hook useEffect para ejecutar una función cuando se renderiza el co
 
 Separa el formulario en un nuevo componente, eso incluye las funciones asociadas en el formulario, añade un boton para mostrar u ocultar el formulario y un boton para eliminar un producto de la factura. además se agregan prop-types para funciones.
 
-## Aplicación carro de compras
+## Aplicación carro de compras - parte 1
+
+`05-cart-app-82`
+
+Comienza definiendo los datos iniciales del catalogo de producto y luego los maqueta en la aplicación web, además utiliza estilos de Bootstrap y se utiliza un useEffect para obtener los datos.
+
+`05-cart-app-86`
+
+Divide el componente principal de la aplicación en subcomponentes, además añade un  estado para el carro de compras y un evento onclick en cada botón del producto para agregarlo al carro, de tal manera que actualice su estado.
+
+`05-cart-app-90`
+
+Al agregar un producto 2 veces en el carro de compras, se actualiza la cantidad; tambien se implementa un botón para eliminar un producto y un servicio para actualizar el precio total del carro de compras. Por otro lado, los datos de los productos del carrito se guardan en un sessionStorage.
+
+`05-cart-app-95`
+
+Se introduce el hook useReducer y las función reducer, para manejar las actualizaciones de estado: agregar producto, actualizar cantidad y eliminar producto. 
+
+Tambien se traslada toda la logica de JavaScript del componente principal en un hook personalizado.
+
+`05-cart-app-100`
+
+Se introduce React Router para el manejo de rutas en la aplicación web,  el hook useNavigate para las navegación mediante un botón, se implementa un componente para la barra de navegación y se divide la logica de la definición de rutas en un nuevo componente.
