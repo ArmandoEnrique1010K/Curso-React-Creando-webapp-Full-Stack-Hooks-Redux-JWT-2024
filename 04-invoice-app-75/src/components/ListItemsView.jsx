@@ -6,15 +6,20 @@ export const ListItemsView = ({ title, items, handlerDeleteItem }) => {
 
     return (
         <>
-            <h4>{title}</h4> {/* Muestra el título de la sección */}
+            <h4>{title}</h4> 
+            {/* Muestra el título de la sección */}
             <table className="table table-striped table-hover">
                 {/* Tabla para mostrar ítems */}
                 <thead>
                     <tr>
-                        <th>Producto</th> {/* Cabecera de la columna Producto */}
-                        <th>Precio</th> {/* Cabecera de la columna Precio */}
-                        <th>Cantidad</th> {/* Cabecera de la columna Cantidad */}
-                        <th>Eliminar</th> {/* Cabecera de la columna para eliminar ítems */}
+                         {/* Cabecera de la columna Producto */}
+                        <th>Producto</th>
+                        {/* Cabecera de la columna Precio */}
+                        <th>Precio</th> 
+                        {/* Cabecera de la columna Cantidad */}
+                        <th>Cantidad</th> 
+                         {/* Cabecera de la columna para eliminar ítems */}
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,4 +44,5 @@ export const ListItemsView = ({ title, items, handlerDeleteItem }) => {
 ListItemsView.propTypes = {
     title: PropTypes.string.isRequired, // title es una cadena obligatoria
     items: PropTypes.array.isRequired, // items es un array obligatorio
+    handlerDeleteItem: PropTypes.func.isRequired // handlerDeleteItem es una función obligatoria
 };

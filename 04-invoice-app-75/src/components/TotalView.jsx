@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'; // Importa PropTypes para la validación de propiedades
+
 export const TotalView = ({ total }) => {
     return (
         <>
@@ -6,4 +8,9 @@ export const TotalView = ({ total }) => {
             </div>
         </>
     );
+}
+
+// Validación de las propiedades del componente
+TotalView.propTypes = {
+    total: PropTypes.number.isRequired, // total es un número obligatorio
 }

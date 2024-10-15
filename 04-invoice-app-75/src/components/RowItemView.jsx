@@ -5,9 +5,12 @@ export const RowItemView = ({ id, product, price, quantity, handlerDeleteItem })
     return (
         <>
             <tr>
-                <td>{product}</td> {/* Muestra el nombre del producto */}
-                <td>{price}</td> {/* Muestra el precio del producto */}
-                <td>{quantity}</td> {/* Muestra la cantidad del producto */}
+                {/* Muestra el nombre del producto */}
+                <td>{product}</td> 
+                {/* Muestra el precio del producto */}
+                <td>{price}</td> 
+                {/* Muestra la cantidad del producto */}
+                <td>{quantity}</td>
                 <td>
                     <button
                         className='btn btn-danger' // Botón con estilo de peligro para eliminar
@@ -27,4 +30,6 @@ RowItemView.propTypes = {
     id: PropTypes.number.isRequired, // id es un número obligatorio (agregado para mantener la claridad)
     product: PropTypes.string.isRequired, // product es una cadena obligatoria
     price: PropTypes.number.isRequired, // price es un número obligatorio
+    quantity: PropTypes.number.isRequired, // quantity es un número obligatorio
+    handlerDeleteItem: PropTypes.func.isRequired // handlerDeleteItem es una función obligatoria
 }

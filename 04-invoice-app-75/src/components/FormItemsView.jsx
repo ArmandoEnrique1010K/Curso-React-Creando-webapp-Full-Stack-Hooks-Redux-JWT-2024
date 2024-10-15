@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types'; // Importamos PropTypes para validar las propiedades del componente.
 
 // Componente para manejar la entrada de ítems de la factura
 export const FormItemsView = ({ handler }) => {
@@ -96,4 +97,9 @@ export const FormItemsView = ({ handler }) => {
             </form>
         </>
     );
+}
+
+// Definimos las propiedades esperadas del componente CompanyView
+FormItemsView.propTypes = {
+    handler: PropTypes.func.isRequired // La propiedad 'handler' debe ser una función y es requerida;
 }
