@@ -21,6 +21,7 @@ export const HelloWorldApp = ({ user, id, title, book }) => {
 }
 
 // Define las validaciones de las propiedades del componente HelloWorldApp
+// El comando "npm install prop-types" sirve para instalar propTypes
 HelloWorldApp.propTypes = {
     title: PropTypes.string.isRequired, // title debe ser una cadena y es requerido
     id: PropTypes.number.isRequired, // id debe ser un número y es requerido
