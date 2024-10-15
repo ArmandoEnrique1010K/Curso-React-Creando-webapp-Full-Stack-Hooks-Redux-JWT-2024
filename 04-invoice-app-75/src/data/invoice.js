@@ -33,7 +33,7 @@ export const invoice = {
       id: 2, // Identificador único del producto
       product: "Corsair Keyboard Mecanico", // Nombre del producto
       price: 150, // Precio del producto
-      quantity: 1, // Cantidad comprada del producto
+      quantity: 2, // Cantidad comprada del producto (cambio a 2)
     },
     {
       id: 3, // Identificador único del producto
