@@ -44,7 +44,7 @@ Introduce el hook useEffect para ejecutar una función cuando se renderiza el co
 
 Separa el formulario en un nuevo componente, eso incluye las funciones asociadas en el formulario, añade un boton para mostrar u ocultar el formulario y un boton para eliminar un producto de la factura. además se agregan prop-types para funciones.
 
-## Aplicación carro de compras - parte 1
+## Aplicación carro de compras
 
 `05-cart-app-82`
 
@@ -67,3 +67,53 @@ Tambien se traslada toda la logica de JavaScript del componente principal en un 
 `05-cart-app-100`
 
 Se introduce React Router para el manejo de rutas en la aplicación web,  el hook useNavigate para las navegación mediante un botón, se implementa un componente para la barra de navegación y se divide la logica de la definición de rutas en un nuevo componente.
+
+## Aplicación usuarios y login
+
+-
+
+## Rutas en la aplicación usuarios
+
+-
+
+## Contexto de React en la aplicación usuarios
+
+-
+
+## API REST carro de compras
+
+-
+
+## API REST usuarios
+
+-
+
+## Comunicación entre frontend y backend carro de compras
+
+-
+
+## Comunicación entre frontend y backend usuarios
+
+-
+
+## Validaciones en API REST usuarios
+
+-
+
+## Integrando validación desde el backend al frontend usuarios
+
+-
+
+## Spring Security y JWT en API REST usuarios
+
+-
+
+## Integrando JWT desde el backend al frontend usuarios
+
+-
+
+## Redux en aplicación usuarios
+
+-
+
+## Paginación en aplicación usuarios
