@@ -1,5 +1,5 @@
-// Importamos useEffect de React
 import { useEffect, useState } from "react";
+// Importa las funciones del servicio
 import { getInvoice, calculateTotal } from "./services/getInvoice"
 import { ClientView } from "./components/ClientView";
 import { CompanyView } from "./components/CompanyView";
@@ -34,6 +34,7 @@ export const InvoiceApp = () => {
     const [total, setTotal] = useState(0);
     const [counter, setCounter] = useState(4);
     const [invoice, setInvoice] = useState(invoiceInitial);
+
     // El valor inicial de items es un arreglo vacio
     const [items, setItems] = useState([]);
 
@@ -49,7 +50,7 @@ export const InvoiceApp = () => {
     // Se elimina la propiedad items
     const { id, name, client, company } = invoice;
 
-    // Desestructuración del objeto formItemsState
+    // Desestructuración del objeto formItemsState para obtener sus atributos
     const { product, price, quantity } = formItemsState;
 
     // useEffect para cargar la factura inicial cuando el componente se monta
@@ -76,10 +77,10 @@ export const InvoiceApp = () => {
     // useEffect para actualizar el total cada vez que cambian los ítems
     useEffect(() => {
         setTotal(calculateTotal(items)); // Calcular y actualizar el total
-        // console.log('el items cambio!')
+        // console.log('los items cambiaron!')
     }, [items]);
 
-    // Manejar cambios en los inputs del formulario
+    // Manejar cambios en los <input> del formulario
     // Se desestructura el atributo target para obtener sus propiedades
     const onInputChange = ({ target: { name, value } }) => {
         // console.log(name);
@@ -87,7 +88,7 @@ export const InvoiceApp = () => {
 
         setFormItemsState({
             ...formItemsState,
-            // Variable dinamica, name es el valor definido en la propiedad name del elemento input y value es el valor de value del mismo elemento 
+            // Variable dinamica, name es el valor definido en la propiedad name del elemento <input> y value es el valor de value del mismo elemento 
             // Actualizar el valor correspondiente en el estado del formulario
             [name]: value
         });

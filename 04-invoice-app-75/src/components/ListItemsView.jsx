@@ -6,25 +6,26 @@ export const ListItemsView = ({ title, items, handlerDeleteItem }) => {
 
     return (
         <>
-            <h4>{title}</h4> 
             {/* Muestra el título de la sección */}
+            <h4>{title}</h4>
+            {/* Tabla para mostrar ítems */}
             <table className="table table-striped table-hover">
-                {/* Tabla para mostrar ítems */}
                 <thead>
                     <tr>
-                         {/* Cabecera de la columna Producto */}
+                        {/* Cabecera de la columna Producto */}
                         <th>Producto</th>
                         {/* Cabecera de la columna Precio */}
-                        <th>Precio</th> 
+                        <th>Precio</th>
                         {/* Cabecera de la columna Cantidad */}
-                        <th>Cantidad</th> 
-                         {/* Cabecera de la columna para eliminar ítems */}
+                        <th>Cantidad</th>
+                        {/* Cabecera de la columna para eliminar ítems */}
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     {/* Mapea los ítems y genera una fila para cada uno */}
                     {items.map(({ id, product, price, quantity }) => (
+                        // Usamos el componente RowItemView para cada item
                         <RowItemView
                             key={id} // Asigna una clave única para cada fila
                             id={id}

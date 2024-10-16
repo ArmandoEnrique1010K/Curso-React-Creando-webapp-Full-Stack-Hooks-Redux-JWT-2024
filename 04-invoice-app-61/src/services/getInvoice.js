@@ -1,4 +1,5 @@
-import { invoice } from "../data/invoice"; // Importamos los datos de la factura desde el archivo correspondiente.
+// Importamos los datos de la factura desde el archivo correspondiente.
+import { invoice } from "../data/invoice";
 
 export const getInvoice = () => {
   // Calculamos el total de la factura sumando el precio de cada item multiplicado por su cantidad.

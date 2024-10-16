@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { getInvoice, calculateTotal } from "./services/getInvoice"; // Importa funciones de servicio
-import { ClientView } from "./components/ClientView"; // Importa componente para mostrar datos del cliente
-import { CompanyView } from "./components/CompanyView"; // Importa componente para mostrar datos de la empresa
-import { InvoiceView } from "./components/InvoiceView"; // Importa componente para mostrar la vista de la factura
-import { ListItemsView } from "./components/ListItemsView"; // Importa componente para mostrar los ítems de la factura
-import { TotalView } from "./components/TotalView"; // Importa componente para mostrar el total de la factura
-import { FormItemsView } from "./components/FormItemsView"; // Importa componente para el formulario de ítems
+import { getInvoice, calculateTotal } from "./services/getInvoice";
+import { ClientView } from "./components/ClientView";
+import { CompanyView } from "./components/CompanyView";
+import { InvoiceView } from "./components/InvoiceView";
+import { ListItemsView } from "./components/ListItemsView";
+import { TotalView } from "./components/TotalView";
+// Importa componente para el formulario de ítems
+import { FormItemsView } from "./components/FormItemsView";
 
 // Estado inicial de la factura
 const invoiceInitial = {
@@ -30,11 +31,21 @@ const invoiceInitial = {
 
 // Componente principal de la aplicación de facturación
 export const InvoiceApp = () => {
-    const [activeForm, setActiveForm] = useState(false); // Estado para controlar la visibilidad del formulario
-    const [total, setTotal] = useState(0); // Estado para almacenar el total de la factura
-    const [counter, setCounter] = useState(4); // Contador para asignar IDs a los ítems
-    const [invoice, setInvoice] = useState(invoiceInitial); // Estado para almacenar la información de la factura
-    const [items, setItems] = useState([]); // Estado para almacenar los ítems de la factura
+
+    // Estado para controlar la visibilidad del formulario
+    const [activeForm, setActiveForm] = useState(false);
+
+    // Estado para almacenar el total de la factura
+    const [total, setTotal] = useState(0);
+
+    // Contador para asignar IDs a los ítems
+    const [counter, setCounter] = useState(4);
+
+    // Estado para almacenar la información de la factura
+    const [invoice, setInvoice] = useState(invoiceInitial);
+
+    // Estado para almacenar los ítems de la factura
+    const [items, setItems] = useState([]);
 
     // Desestructuración de los valores del estado de la factura
     const { id, name, client, company } = invoice;
@@ -114,12 +125,12 @@ export const InvoiceApp = () => {
                         {/* Muestra el total de la factura */}
                         <TotalView total={total} />
 
-                        {/* Botón para activar/desactivar el formulario */}
+                        {/* Botón para activar/desactivar el formulario, el texto cambia segun el valor de activeForm */}
                         <button className="btn btn-secondary" onClick={onActiveForm}>
                             {!activeForm ? 'Agregar Item' : 'Cerrar Form'}
                         </button>
 
-                        {/* Muestra el formulario si está activo */}
+                        {/* Muestra el formulario si está activo, utiliza un operador || en lugar de un operador ternario */}
                         {!activeForm || <FormItemsView handler={handlerAddItems} />}
                     </div>
                 </div>

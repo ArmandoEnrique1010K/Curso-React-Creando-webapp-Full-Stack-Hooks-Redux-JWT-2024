@@ -1,11 +1,14 @@
-import { products } from "../data/products"
+import { products } from "../data/products";
 
+// Esta función obtiene la lista de productos disponibles desde el archivo de datos.
 export const getProducts = () => {
-    return products;
-}
+  return products; // Devuelve el array de productos.
+};
 
+// Esta función calcula el total del carrito de compras.
 export const calculateTotal = (items) => {
-    return items.reduce(
-        (accumulator, item) => accumulator + item.product.price * item.quantity
-        , 0);
-}
+  return items.reduce(
+    (accumulator, item) => accumulator + item.product.price * item.quantity, // Suma el precio de cada producto multiplicado por su cantidad al acumulador.
+    0 // Valor inicial del acumulador es 0.
+  );
+};

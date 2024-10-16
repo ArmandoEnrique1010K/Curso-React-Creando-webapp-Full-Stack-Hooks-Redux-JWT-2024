@@ -11,7 +11,7 @@ export const InvoiceApp = () => {
     // items se renombra a itemsInitial
     const { total, id, name, client, company, items: itemsInitial } = getInvoice();
 
-    // Estado para los valores de los inputs de productos
+    // Estado para los valores de los <input> del producto, precio y cantidad
     const [productValue, setProductValue] = useState('');
     const [priceValue, setPriceValue] = useState('');
     const [quantityValue, setQuantityValue] = useState('');
@@ -24,9 +24,9 @@ export const InvoiceApp = () => {
     const [counter, setCounter] = useState(4);
 
     // Función para manejar el cambio en el input del producto
-    // La propiedad desestructurada target representa el mismo elemento input en el navegador
+    // La propiedad target sirve para obtener el elemento HTML donde ocurrio el evento
     const onProductChange = ({ target }) => {
-        // la propiedad value representa el valor introducido en el campo
+        // la propiedad value representa el valor introducido en el <input> desde el navegador
         console.log(target.value);
         setProductValue(target.value);
     };
@@ -50,6 +50,7 @@ export const InvoiceApp = () => {
 
         // Validaciones para los campos del formulario
         // Si se cumple la condición, no retorna nada y detiene la ejecución de la función
+
         // Cantidad de caracteres introducidos
         if (productValue.trim().length <= 1) return;
         if (priceValue.trim().length <= 1) return;
@@ -75,7 +76,7 @@ export const InvoiceApp = () => {
         setItems([...items, {
             id: counter,
             product: productValue.trim(),
-            // Existen 2 formas de convertir un String a un number
+            // Existen 2 formas de convertir un String a un number: operador unario y parseInt
             price: +priceValue.trim(),
             quantity: parseInt(quantityValue.trim(), 10)
         }]);
