@@ -43,6 +43,14 @@ const invoice = {
     },
   ],
 
+  // Método 'greeting' que devuelve un saludo personalizado para el cliente.
+  greeting: function () {
+    // "this" hace referencia a este objeto para acceder a los valores de sus propiedades
+    return `Hola ${this.client.name}`; // Saludo usando el nombre del cliente.
+  },
+
+  // Para definir un método en un objeto se utiliza una función anonima en lugar de una función de flecha, dado que no aceptara el termino this
+
   // Método 'total' que calcula el costo total de los productos en la factura.
   total: function () {
     let total = 0; // Variable para almacenar el total de la factura.
@@ -51,11 +59,6 @@ const invoice = {
       total = total + item.price * item.quantity;
     });
     return total; // Se devuelve el total calculado.
-  },
-
-  // Método 'greeting' que devuelve un saludo personalizado para el cliente.
-  greeting: function () {
-    return `Hola ${this.client.name}`; // Saludo usando el nombre del cliente.
   },
 };
 

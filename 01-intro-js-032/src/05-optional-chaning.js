@@ -40,6 +40,9 @@ const invoice = {
   },
 };
 
+
+
+
 // Uso del operador de encadenamiento opcional (?.) para acceder a propiedades que pueden no existir.
 // Se intenta acceder a 'company.name'. Si 'company' no existe, no se lanzará un error y el valor será 'undefined'.
 console.log(invoice.company?.name); // Salida: undefined (ya que 'company' no está definido en el objeto 'invoice')

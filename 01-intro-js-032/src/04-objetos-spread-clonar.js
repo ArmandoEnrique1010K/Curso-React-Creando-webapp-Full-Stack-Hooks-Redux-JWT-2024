@@ -42,13 +42,15 @@ const invoice = {
 // Esto se comenta para evitar que 'invoice2' y 'invoice' sean el mismo objeto en memoria.
 // const invoice2 = invoice;
 
-// Se utiliza la sintaxis de propagación para crear una copia superficial del objeto 'invoice'.
+// Se utiliza la sintaxis de propagación (operador Spread) para crear una copia superficial de las propiedades del objeto 'invoice' y colocarlo dentro de un nuevo objeto.
 // Esto crea un nuevo objeto 'invoice2' con las mismas propiedades que 'invoice', pero no una referencia al mismo objeto.
 const invoice2 = { ...invoice };
 
 // Se compara si 'invoice' y 'invoice2' son el mismo objeto en memoria.
 // Dado que se usa la sintaxis de propagación, 'invoice2' es un nuevo objeto, por lo que la comparación será falsa.
 const result = invoice === invoice2;
+
+// La diferencia entre los operadores de igualdad (==) e identidad (===) es que ambos operadores realizan la misma comparación, pero el operador de identidad (===) compara el tipo de dato a diferencia del operador de igualdad (==) que puede convertir el tipo de dato.
 
 // Se utiliza una estructura condicional para imprimir si los objetos son iguales o no.
 if (result) {

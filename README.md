@@ -8,17 +8,62 @@ Algunos de estos proyectos pueden ser complejos, es por ello que se han divivido
 
 `01-intro-js`
 
-Detalla la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamentales y tecnicas que se aplicaran en el desarrollo web con React como por ejemplo: el uso de funciones de flecha, desestructuración y promesas en JavaScript.
+Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamentales y tecnicas que se aplicaran en el desarrollo web con React:
+
+- Variables, constantes, funciones de flecha, objetos que incluyen métodos propios y arreglos.
+
+- Operador Spread en objetos y arreglos, operador Optional Chaining y operador Ternario para las condiciones.
+
+- Métodos principales en arreglos: map, find, filter, includes y some.
+
+- Importar y exportar módulos y exportación por defecto.
+
+- Promesas y funciones asincronas con async y await.
+
+- Función global fetch para obtener datos de una API externa.
+
+- Manipulación del DOM (Document Object Model).
+
+|                 | Archivos                                                                                          |
+| --------------- |:-------------------------------------------------------------------------------------------------:|
+| Creados (16)    | main.js, invoices.js, 01-variables-const.js, 02-function.js, 03-objetos.js, ... , 15-fetch-api.js |
+| Modificados (2) | index.html                                                                                        |
 
 ## Introducción a React
 
 `02-intro-react`
 
-Aplica la composición de componentes, una de las tecnicas más utilizadas hoy en dia en React en una página web, tambien utiliza la biblioteca prop-types para especificar los tipos de datos de las propiedades (Props) que se pasan entren los componentes.
+- Creación de elementos HTML utilizando React.createElement y de forma directa. 
+
+- El uso de las propiedades (props) que se pasan entre 2 componentes.
+
+- Definición del tipo de dato de las props utilizando la libreria prop-types.
+
+- Definición del valor por defecto de las props utilizando default-props.
+
+- Técnica de la composición de componentes para renderizar los componentes y pasar las props entre componentes.
+
+|                 | Archivos                                                              |
+| --------------- |:---------------------------------------------------------------------:|
+| Creados (5)     | 02-main.jsx, HelloWorldApp.jsx, Title.jsx, UserDetails.jsx y Book.jsx |
+| Modificados (2) | index.html, main.jsx                                                  |
 
 ## El estado de React
 
 `03-counter-app`
+
+- Definición de una variable de estado y su función para modificarla utilizando useState.
+
+- Manejo de un evento onClick para ejecutar una función al hacer clic en un botón.
+
+- Actualización del estado en la vista de la aplicación web.
+
+|                 | Archivos             |
+| --------------- |:--------------------:|
+| Creados (5)     | CounterApp.jsx       |
+| Modificados (2) | index.html, main.jsx |
+
+
 
 Una variación de la aplicación de prueba que se genera por defecto en React, explica como se implementa el hook useState y como el valor de una variable de estado se actualiza con un clic en la aplicación web.
 
@@ -34,6 +79,11 @@ Separa los componentes de la aplicación: data, service y components, además ut
 
 Aplica un nuevo servicio para calcular el total utilizando los datos, la composición de componentes para dividir el componente principal en subcomponentes y prop-types para los tipos de props que se pasan entre componentes.
 
+| Archivos    |                                                                                                       |
+|:-----------:|:-----------------------------------------------------------------------------------------------------:|
+| Creados     | ClientView.jsx, CompanyView.jsx, InvoiceView.jsx, ListItemsView.jsx, RowItemView.jsx y TotalView.jsx. |
+| Modificados | getInvoice.js, InvoiceApp.jsx                                                                         |
+
 Archivos creados: ClientView.jsx, CompanyView.jsx, InvoiceView.jsx, ListItemsView.jsx, RowItemView.jsx, TotalView.jsx.
 
 Archivos modificados: getInvoice.js, InvoiceApp.jsx
@@ -43,6 +93,10 @@ Archivos eliminados:
 `04-invoice-app-67`
 
 Se modifica el componente principal para incluir un formulario en la aplicación web para agregar un nuevo producto, implica el uso de useState, eventos que llaman funciones, validaciones de campos de formularios y actualizaciones de estados.
+
+| Archivos    |                |
+|:-----------:|:--------------:|
+| Modificados | InvoiceApp.jsx |
 
 Archivos creados: 
 
@@ -54,6 +108,10 @@ Archivos eliminados:
 
 Introduce el hook useEffect para ejecutar una función cuando se renderiza el componente principal y cuando cambia el valor de los estados, se utiliza un solo useState para todos los campos del formulario, por otro lado se modifica el servicio para calcular el total para que funcione con el hook useEffect.
 
+| Archivos    |                               |
+|:-----------:|:-----------------------------:|
+| Modificados | getInvoice.js, InvoiceApp.jsx |
+
 Archivos creados:
 
 Archivos modificados: InvoiceApp.jsx, getInvoice.js, 
@@ -63,6 +121,11 @@ Archivos eliminados:
 `04-invoice-app-75`
 
 Separa el formulario en un nuevo componente, eso incluye las funciones asociadas en el formulario, añade un boton para mostrar u ocultar el formulario y un boton para eliminar un producto de la factura. además se agregan prop-types para funciones.
+
+| Archivos    |                                                                        |
+|:-----------:|:----------------------------------------------------------------------:|
+| Creados     | FormItemsView.jsx                                                      |
+| Modificados | InvoiceApp.jsx, ListItemsView.jsx, RowItemView.jsx y TotalItemView.jsx |
 
 Archivos creados: FormItemsView.jsx,
 
