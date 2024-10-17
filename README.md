@@ -120,6 +120,16 @@ Archivos creados: Navbar, CartRoutes
 
 112
 
+- Implementa las funcionalidades de agregar, editar y eliminar usuario.
+
+- Además operadores ternarios para mostrar el texto del boton, un mensaje si no hay usuarios
+
+- Se implementa useReducer
+
+- Componentes modificados: UserForm, UserRow, UsersList, usersReducer, UsersApp
+
+- Para editar un usuario, se requiere que introduzca la contraseña del usuario (esto se corregira en la siguiente sección)
+
 117
 
 123
