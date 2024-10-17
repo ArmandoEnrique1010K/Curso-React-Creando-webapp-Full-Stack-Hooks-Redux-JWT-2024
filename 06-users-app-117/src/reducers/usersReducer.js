@@ -21,6 +21,7 @@ export const usersReducer = (state = [], action) => {
         if (u.id === action.payload.id) {
           return {
             ...action.payload, // Reemplaza los datos del usuario con la nueva información del payload
+            password: u.password, // Se mantiene la propiedad password (no se modifica para omitir ese campo)
           };
         }
         return u; // Retorna los usuarios que no coinciden con el ID sin cambios

@@ -1,65 +1,22 @@
-import { useReducer, useState } from "react";
 import { UserForm } from "./components/UserForm";
 import { UsersList } from "./components/UsersList";
-import { usersReducer } from "./reducers/usersReducer";
-
-// Estado inicial para la lista de usuarios
-const initialUsers = [
-    {
-        id: 1,
-        username: 'pepe',
-        password: '12345',
-        email: 'pepe@correo.com'
-    },
-];
-
-// Estado inicial para el formulario del usuario (se traslada aqui) 
-const initialUserForm = {
-    id: 0,
-    username: '',
-    password: '',
-    email: '',
-}
+import { useUsers } from "./hooks/useUsers";
 
 // Componente principal de la aplicación UsersApp
 export const UsersApp = () => {
 
-    // Hook useReducer para manejar el estado de los usuarios con el usersReducer
-    const [users, dispatch] = useReducer(usersReducer, initialUsers);
-
-    // Hook useState para manejar el usuario seleccionado en el formulario
-    const [userSelected, setUserSelected] = useState(initialUserForm);
-
-    // Función para agregar o actualizar un usuario
-    const handlerAddUser = (user) => {
-        let type;
-
-        // Si el usuario no tiene un ID, se añade como nuevo; si tiene ID, se actualiza
-        if (user.id === 0) {
-            type = 'addUser';
-        } else {
-            type = 'updateUser';
-        }
-
-        dispatch({
-            // Simplifica type: type
-            type,
-            payload: user, // Se envía el usuario como payload de la acción
-        });
-    }
-
-    // Función para eliminar un usuario
-    const handlerRemoveUser = (id) => {
-        dispatch({
-            type: "removeUser",
-            payload: id, // Se envía el ID del usuario a eliminar como payload
-        });
-    }
-
-    // Función para seleccionar un usuario y cargar sus datos en el formulario
-    const handlerUserSelectedForm = (user) => {
-        setUserSelected({ ...user }); // Se establece el usuario seleccionado en el estado del formulario
-    }
+    // Desestructura el estado y las funciones del hook useUsers
+    const {
+        users,
+        userSelected,
+        initialUserForm,
+        visibleForm,
+        handlerAddUser,
+        handlerRemoveUser,
+        handlerUserSelectedForm,
+        handlerOpenForm,
+        handlerCloseForm,
+    } = useUsers();
 
     return (
         <div className="container my-4">
@@ -67,28 +24,43 @@ export const UsersApp = () => {
             <h2>Users App</h2>
             <div className="row">
                 {/* Columna que contiene el formulario para agregar o actualizar usuarios */}
-                <div className="col">
-                    <UserForm
-                        handlerAddUser={handlerAddUser}
-                        initialUserForm={initialUserForm}
-                        userSelected={userSelected}
-                    />
-                </div>
+                {
+                    !visibleForm || ( // Muestra el formulario solamente si visibleForm es true
+                        <div className="col">
+                            <UserForm
+                                handlerAddUser={handlerAddUser} // Función para agregar o actualizar un usuario
+                                initialUserForm={initialUserForm} // Estado inicial del formulario
+                                userSelected={userSelected} // Usuario seleccionado para editar
+                                handlerCloseForm={handlerCloseForm} // Función para cerrar el formulario
+                            />
+                        </div>)
+
+                }
+
                 {/* Columna que contiene la lista de usuarios */}
                 <div className="col">
                     {
-                        // Condición ternaria para renderizar un mensaje o <UsersList> si la cantidad de usuarios es 0
-                        users.length === 0 ?
+                        visibleForm || ( // Si el formulario no es visible, muestra el botón para abrirlo
+                            <button className="btn btn-primary my-2" type="button" onClick={handlerOpenForm}>
+                                Nuevo usuario
+                            </button>
+                        )
+                    }
+
+                    {
+                        // Condición ternaria para renderizar un mensaje o <UsersList> según la cantidad de usuarios
+                        users.length === 0 ? (
                             <div className="alert alert-warning">
                                 No hay usuarios en el sistema!
-                            </div> :
+                            </div>
+                        ) : (
                             <UsersList
-                                users={users}
-                                // Pasa las funciones y el usuario seleccionado al componente como prop
-                                handlerRemoveUser={handlerRemoveUser}
-                                handlerUserSelectedForm={handlerUserSelectedForm}
-                                userSelected={userSelected}
+                                users={users} // Lista de usuarios
+                                handlerRemoveUser={handlerRemoveUser} // Función para eliminar un usuario
+                                handlerUserSelectedForm={handlerUserSelectedForm} // Función para seleccionar un usuario para editar
+                                userSelected={userSelected} // Usuario actualmente seleccionado
                             />
+                        )
                     }
                 </div>
             </div>

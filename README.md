@@ -126,11 +126,25 @@ Archivos creados: Navbar, CartRoutes
 
 - Se implementa useReducer
 
-- Componentes modificados: UserForm, UserRow, UsersList, usersReducer, UsersApp
+- Componentes modificados: UserForm, UserRow, UsersList, UsersApp
+
+- Componentes creados: usersReducer
 
 - Para editar un usuario, se requiere que introduzca la contraseña del usuario (esto se corregira en la siguiente sección)
 
 117
+
+- Se omite el campo password al momento de editar un usuario
+
+- Mensajes con Sweetalert en lugar de Alert
+
+- Hook personalizado
+
+- Funciones para mostrar u ocultar el formulario
+
+- Componentes modificados: UserForm, UserRow, UsersList, usersReducer, UsersApp
+
+- Componentes creados useUsers.
 
 123
 

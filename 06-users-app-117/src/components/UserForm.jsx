@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import Swal from "sweetalert2";
 
-export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
+export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handlerCloseForm }) => {
 
     // Hook de estado para manejar los valores del formulario de usuario
     const [userForm, setUserForm] = useState(initialUserForm);
@@ -30,17 +31,30 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
     // Función que se ejecuta cuando se envía el formulario
     const onSubmit = (event) => {
         event.preventDefault(); // Evita que el formulario se envíe y recargue la página
+
         // Validación: verifica que todos los campos estén completos
-        if (!username || !password || !email) {
-            alert('Debe completar los campos del formulario!');
+        // Aplica para el campo password si el id es igual a 0, recordar que || ejecuta la operación de izquierda a derecha si es verdadero
+        if (!username || (!password && id === 0) || !email) {
+            Swal.fire({
+                title: "Error de validación",
+                text: "¡Debe completar los campos del formulario!",
+                icon: "error"
+            });
             return; // Detiene la ejecución si algún campo está vacío
         }
 
+        // Llama a la función para agregar o actualizar el usuario
         handlerAddUser(userForm);
 
         // Reinicia el formulario a su estado inicial después de enviarlo
         setUserForm(initialUserForm);
     };
+
+    // Función para cerrar el formulario y reiniciar su estado
+    const onCloseForm = () => {
+        handlerCloseForm(); // Llama a la función para cerrar el formulario
+        setUserForm(initialUserForm); // Reinicia el formulario a su estado inicial
+    }
 
     return (
         <form onSubmit={onSubmit}>
@@ -58,15 +72,20 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
                 value={username}
                 onChange={onInputChange}
             />
-            {/* Campo de entrada para la contraseña */}
-            <input
-                className="form-control my-3 w-75"
-                placeholder="Password"
-                type="password"
-                name="password"
-                value={password}
-                onChange={onInputChange}
-            />
+            {/* Campo de entrada para la contraseña, solo visible si el ID es 0 (nuevo usuario) */}
+            {
+                id > 0 || (
+                    <input
+                        className="form-control my-3 w-75"
+                        placeholder="Password"
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={onInputChange}
+                    />
+                )
+            }
+
             {/* Campo de entrada para el email */}
             <input
                 className="form-control my-3 w-75"
@@ -83,6 +102,8 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
                     id > 0 ? 'Editar' : 'Crear' // Cambia el texto del botón dependiendo del estado del usuario
                 }
             </button>
+            {/* Botón para cerrar el formulario */}
+            <button className="btn btn-primary mx-2" type="button" onClick={onCloseForm}>Cerrar</button>
         </form>
     );
 };
