@@ -70,10 +70,6 @@ Archivos modificados: InvoiceApp.jsx, ListItemsView.jsx, RowItemView.jsx, TotalI
 
 Archivos eliminados:
 
-
-
-
-
 ## Aplicación carro de compras
 
 `05-cart-app-82`
@@ -88,15 +84,11 @@ Archivos creados: CartView, CatalogView, ProductCardView
 
 Archivos modificados: CartApp
 
-
-
 `05-cart-app-90`
 
 Al agregar un producto 2 veces en el carro de compras, se actualiza la cantidad; tambien se implementa un botón para eliminar un producto y un servicio para actualizar el precio total del carro de compras. Por otro lado, los datos de los productos del carrito se guardan en un sessionStorage.
 
 Archivos modificados: productService.js, CartApp, CartView,
-
-
 
 `05-cart-app-95`
 
@@ -108,10 +100,6 @@ Archivos modificados: CartApp.jsx,
 
 Archivos agregados: itemsActions, itemsReducer, useItemsCart, CartView
 
-
-
-
-
 `05-cart-app-100`
 
 Se introduce React Router para el manejo de rutas en la aplicación web,  el hook useNavigate para las navegación mediante un botón, se implementa un componente para la barra de navegación y se divide la logica de la definición de rutas en un nuevo componente.
@@ -120,13 +108,23 @@ Archivos modificados: main.jsx, CartApp, CartView, productCardView,
 
 Archivos creados: Navbar, CartRoutes
 
-
-
-
-
 ## Aplicación usuarios y login
 
--
+106
+
+- Define la estructura de la aplicación, compuesta por 4 componentes, 
+
+- Se introduce unos datos de prueba
+
+- El estado formulario se maneja de forma interna, para los campos y el boton para subir el formulario nada más imprime los datos del formulario en la consola.
+
+112
+
+117
+
+123
+
+129
 
 ## Rutas en la aplicación usuarios
 
