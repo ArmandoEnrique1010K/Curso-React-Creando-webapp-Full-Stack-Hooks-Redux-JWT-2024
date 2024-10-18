@@ -60,12 +60,14 @@ Instalar desde la consola: prop-types
 
 - Manejo de un evento onClick para ejecutar una función al hacer clic en un botón.
 
-- Actualización del estado la variable en el navegador.
+- Actualización de la variable de estado en el navegador.
 
 |                 | Archivos             |
 | --------------- |:--------------------:|
 | Creados (5)     | CounterApp.jsx       |
 | Modificados (2) | index.html, main.jsx |
+
+Instalar desde la consola: prop-types
 
 Una variación de la aplicación de prueba que se genera por defecto en React, explica como se implementa el hook useState y como el valor de una variable de estado se actualiza con un clic en la aplicación web.
 

@@ -20,12 +20,15 @@ export const InvoiceApp = () => {
             <div className="container">
                 {/* Tarjeta de Bootstrap que contiene la factura */}
                 <div className="card my-3">
+                    {/* El titulo de la tarjeta */}
                     <div className="card-header">
                         Ejemplo Factura
                     </div>
 
                     {/* Sección que muestra el ID y el nombre de la factura */}
+                    {/* El cuerpo de la tarjeta */}
                     <div className="card-body">
+                        {/* Contenedor de lista con clase de Bootstrap apra estilos */}
                         <ul className="list-group">
                             {/* Elementos de lista con clases de Bootstrap para estilos */}
                             <li className="list-group-item">Id: {id}</li>
@@ -69,6 +72,7 @@ export const InvoiceApp = () => {
                             </thead>
                             <tbody>
                                 {/* Iteramos sobre la lista de items y mostramos cada producto en una fila de la tabla */}
+                                {/* Se aplica la desestructuración del elemento (objeto) para obtener sus propiedades como variables */}
                                 {items.map(({ id, product, price, quantity }) => (
                                     <tr key={id}>
                                         <td>{product}</td>

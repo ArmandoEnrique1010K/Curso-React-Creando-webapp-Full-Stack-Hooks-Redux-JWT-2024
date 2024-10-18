@@ -7,6 +7,7 @@ import { InvoiceApp } from './components/InvoiceApp';
 
 // Renderizamos la aplicación de facturas en el elemento con el id 'root' en el HTML
 ReactDOM.createRoot(document.getElementById('root')).render(
+  // React.StrictMode puede hacer que imprima el mismo mensaje en la consola 2 veces
   <React.StrictMode>
     {/* Incluimos el componente InvoiceApp que representa la aplicación de facturas */}
     <InvoiceApp />
