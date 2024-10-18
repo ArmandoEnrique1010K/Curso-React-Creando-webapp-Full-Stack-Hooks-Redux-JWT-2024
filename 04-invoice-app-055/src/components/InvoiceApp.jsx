@@ -19,6 +19,7 @@ export const InvoiceApp = () => {
             {/* Contenedor principal con una clase de Bootstrap para centrar y agregar márgenes */}
             <div className="container">
                 {/* Tarjeta de Bootstrap que contiene la factura */}
+                {/* La sintaxis my-3 aplica un margen en el eje y de 3 unidades, existen variaciones */}
                 <div className="card my-3">
                     {/* El titulo de la tarjeta */}
                     <div className="card-header">
