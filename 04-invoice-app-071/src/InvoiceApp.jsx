@@ -29,6 +29,7 @@ const invoiceInitial = {
 };
 
 export const InvoiceApp = () => {
+    // Normalmente en un componente de React, las variables de estado siempre se definen primero
 
     // Estado para el total, contador y datos de la factura
     const [total, setTotal] = useState(0);
@@ -39,7 +40,7 @@ export const InvoiceApp = () => {
     const [items, setItems] = useState([]);
 
     // Estado para manejar los valores del formulario de ítems
-    // Se renombra productValue por product, se realiza el mismo procedimiento con las demás variables de estado
+    // Se renombra productValue por product, se realiza el mismo procedimiento con las demás variables de estado (pulsa CTRL + H en Visual Studio Code y procede a reemplazar)
     const [formItemsState, setFormItemsState] = useState({
         product: '',
         price: '',
@@ -60,6 +61,8 @@ export const InvoiceApp = () => {
         setInvoice(data); // Guardar los datos de la factura en el estado
         setItems(data.items); // Guardar los ítems en el estado
     }, []);
+
+    // Es importante optimizar la aplicación cuando se conecta a una API remota para evitar retrasos.
 
     // useEffect para pruebas, la función se ejecuta cuando el valor de la dependencia cambia
     useEffect(() => {
@@ -156,6 +159,8 @@ export const InvoiceApp = () => {
 
                         {/* Mostrar la lista de ítems y el total */}
                         <ListItemsView title="Productos de la factura" items={items} />
+
+                        {/* Se utiliza el valor de la variable de estado total */}
                         <TotalView total={total} />
 
                         {/* Formulario para agregar nuevos ítems */}
