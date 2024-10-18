@@ -94,16 +94,21 @@ console.log(invoiceByClientName); // Imprime la factura del cliente 'Pepe'
 const invoiceFilter = invoices.filter((i) => i.id > 1);
 console.log(invoiceFilter); // Imprime facturas con id mayor a 1
 
-// Imprime un mensaje indicando que se está eliminando una factura
-console.log("filter eliminar");
-// Se utiliza el método 'filter' para obtener un nuevo arreglo que excluye la factura con id 2.
-const invoiceDeleted = invoices.filter((i) => i.id !== 2);
-console.log(invoiceDeleted); // Imprime facturas que no tienen id 2
-
-// Se utiliza el método 'filter' para obtener un nuevo arreglo que contiene las facturas que incluyen el producto 'papper'.
+// Se utiliza el método 'filter' para obtener un nuevo arreglo que contiene las facturas que incluyen el producto 'papper', esto se logra con el método 'includes'.
 const invoiceFilter2 = invoices.filter((i) => i.items.includes(papper));
 console.log(invoiceFilter2); // Imprime facturas que incluyen el producto 'papper'
 
 // Se utiliza el método 'some' para verificar si existe al menos una factura cuyo cliente tenga el nombre 'Pepe'.
 const result = invoices.some((i) => i.client.name === "Pepe");
 console.log(result); // Imprime 'true' si existe al menos una factura del cliente 'Pepe', de lo contrario 'false'
+
+// Imprime un mensaje indicando que se está eliminando una factura
+console.log("filter eliminar");
+// Se utiliza el método 'filter' para obtener un nuevo arreglo que excluye la factura con id 2.
+const invoiceDeleted = invoices.filter((i) => i.id !== 2);
+console.log(invoiceDeleted); // Imprime facturas que no tienen id 2
+
+// En este contexto, existen los operadores de desigualdad (!=) y desigualdad estricta (!==) para excluir elementos de un arreglo.
+// La diferencia entre ellos es que el operador de desigualdad estricta (!==) excluye un elemento por valor y tipo de dato, mientras que el operdaor de desigualdad (!=) excluye solamente por valor.
+const invoiceDeleted2 = invoices.filter((i) => i.id !== "2");
+console.log(invoiceDeleted2); // Imprime facturas que no tienen id 2 (tipo String).

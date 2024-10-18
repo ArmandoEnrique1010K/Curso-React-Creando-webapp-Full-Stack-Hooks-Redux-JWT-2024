@@ -78,6 +78,7 @@ const invoices = [
 ];
 
 // Función para buscar una factura por el nombre del cliente
+// Necesita pasar un argumento (clientName) al momento de llamar a esta función
 const invoiceByClientName = (clientName) => {
   return invoices.find((i) => i.client.name === clientName); // Devuelve la primera factura que coincida con el nombre del cliente
 };
@@ -87,8 +88,12 @@ const invoiceById = (id) => {
   return invoices.find((i) => i.id === id); // Devuelve la primera factura que coincida con el ID
 };
 
+// Las promesas en JavaScript operan de manera sincrona, eso significa que el código que le sigue luego de la promesa puede ejecutarse antes de que la promesa se resuelva.
+
 // Función para encontrar una factura por ID de forma asíncrona usando promesas
 const findInvoiceById = (id) => {
+  // El constructor Promise recibe una función de flecha con 2 parámetros: resolve (es una función global que recibe como argumento el resultado de la promesa) y reject (una función global que rebibe un mensaje de error)
+
   // Retorna una promesa
   const promise = new Promise((resolve, reject) => {
     // Simulación de una operación asíncrona con setTimeout
@@ -96,6 +101,7 @@ const findInvoiceById = (id) => {
       const result = invoiceById(id); // Busca la factura por ID
 
       // Si se encuentra la factura, se resuelve la promesa
+      // Recuerda que el método find devuelve el objeto resultante de la lista de objetos o un undefined
       if (result) {
         resolve(result);
       } else {
@@ -116,3 +122,10 @@ export {
   invoiceById,
   findInvoiceById,
 };
+
+// Otra forma de exportar por defecto un módulo es de la siguiente manera:
+/*
+export default (clientName) => {
+  return invoices.find((i) => i.client.name === clientName);
+}
+*/

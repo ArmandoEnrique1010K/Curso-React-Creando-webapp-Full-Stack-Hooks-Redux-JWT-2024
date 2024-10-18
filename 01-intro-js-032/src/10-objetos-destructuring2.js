@@ -7,8 +7,7 @@ const user = {
 };
 
 // Se define una función 'detail' que toma un objeto como argumento.
-// Dentro de los paréntesis de la función, se utiliza desestructuración
-// para extraer las propiedades 'username' y 'email' del objeto recibido.
+// Dentro de los paréntesis de la función, se utiliza desestructuración para extraer las propiedades 'username' y 'email' del objeto recibido.
 const detail = ({ username, email }) => {
   // Se imprime un mensaje que incluye el nombre de usuario y su correo electrónico.
   console.log(`El detalle del usuario ${username} con correo ${email}`);

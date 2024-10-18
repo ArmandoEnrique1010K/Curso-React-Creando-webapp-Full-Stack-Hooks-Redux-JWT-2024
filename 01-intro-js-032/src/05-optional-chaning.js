@@ -40,8 +40,11 @@ const invoice = {
   },
 };
 
+// Normalmente al intentar acceder a una propiedad de un objeto que no existe, el valor obtenido es 'undefined'
+console.log(invoice.company); // Salida: undefined
 
-
+// En el mismo contexto, si 'company' contiene un objeto como valor y se quiere acceder a una propiedad de este objeto anidado. Dado que no existe ese objeto, se obtendrá un error
+// console.log(invoice.company.name);
 
 // Uso del operador de encadenamiento opcional (?.) para acceder a propiedades que pueden no existir.
 // Se intenta acceder a 'company.name'. Si 'company' no existe, no se lanzará un error y el valor será 'undefined'.
@@ -51,9 +54,9 @@ console.log(invoice.company?.name); // Salida: undefined (ya que 'company' no es
 // Como 'address' no existe en 'client', el operador de encadenamiento opcional devuelve 'undefined' sin errores.
 console.log(invoice.client?.address?.street); // Salida: undefined (ya que 'address' no está definido en 'client')
 
-// Verifica si 'company.name' existe usando el operador de encadenamiento opcional.
+// Antes de JavaScript ES6, se tenia el siguiente algoritmo para verificar si la propiedad del objeto existe y si aquella propiedad del objeto anidado existe.
 // Si existe, imprime 'perfecto!!!', de lo contrario, imprime 'no viene la empresa'.
-if (invoice.company?.name) {
+if (invoice.company != undefined && invoice.company.name) {
   console.log("perfecto!!!"); // No se ejecuta porque 'company' no existe.
 } else {
   console.log("no viene la empresa"); // Salida: 'no viene la empresa'

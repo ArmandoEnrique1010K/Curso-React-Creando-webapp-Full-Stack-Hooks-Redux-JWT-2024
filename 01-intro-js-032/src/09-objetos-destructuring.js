@@ -15,8 +15,13 @@ const user = {
 // Esto permite asignar las propiedades directamente a variables con el mismo nombre.
 const { username, ranking, age } = user;
 
-// Se imprime un mensaje que incluye el nombre de usuario y su edad.
-console.log(`${username} tiene ${age} de edad`); // Salida: 'andres tiene 20 de edad'
+// El orden de los nombres de las propiedades no es relevante en la desestructuración del objeto.
 
 // Se imprime el ranking del usuario.
 console.log(ranking); // Salida: 9
+
+// Se imprime un mensaje que incluye el nombre de usuario y su edad.
+console.log(`${username} tiene ${age} de edad`); // Salida: 'andres tiene 20 de edad'
+
+// Se imprime los valores de las propiedades de forma directa, no recomendado
+// console.log(`${user.username} tiene ${user.age} de edad`);

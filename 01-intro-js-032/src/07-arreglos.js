@@ -27,3 +27,5 @@ for (let i = 0; i < products.length; i++) {
 
 // Se imprime el primer elemento del array accediendo a él mediante su índice [0].
 console.log(products[0]); // Salida: 'mesa'
+// Se imprime el quinto elemento del array accediendo a él mediante su índice [4].
+console.log(products[4]); // Salida: 'pantalla lcd'

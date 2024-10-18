@@ -9,6 +9,9 @@ const products2 = products.concat(["pantalla lcd", "sony tv"]);
 const fruits = ["peras", "manzanas", "sandias", "frutillas"];
 
 // Se crea un array 'mercado' utilizando el operador de propagación (...).
+// Recuerda que Spread permite obtener todos los elementos iterables de un arreglo
+// const mercado = [...products]
+
 // Esto permite combinar los elementos de 'products2', 'fruits' y otros elementos adicionales en un solo array.
 const mercado = [...products2, ...fruits, "lechuga", "papas", "uvas"];
 
