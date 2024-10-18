@@ -33,20 +33,24 @@ Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamen
 
 `02-intro-react`
 
-- Creación de elementos HTML utilizando React.createElement y de forma directa. 
+- Creación de elementos HTML utilizando React.createElement y de forma directa en un archivo jsx.
 
-- El uso de las propiedades (props) que se pasan entre 2 componentes.
+- Renderizar un componente.
+
+- El uso de las propiedades (props) que se pasan entre componentes.
 
 - Definición del tipo de dato de las props utilizando la libreria prop-types.
 
 - Definición del valor por defecto de las props utilizando default-props.
 
-- Técnica de la composición de componentes para renderizar los componentes y pasar las props entre componentes.
+- Aplicación de la técnica de composición de componentes.
 
 |                 | Archivos                                                              |
 | --------------- |:---------------------------------------------------------------------:|
 | Creados (5)     | 02-main.jsx, HelloWorldApp.jsx, Title.jsx, UserDetails.jsx y Book.jsx |
 | Modificados (2) | index.html, main.jsx                                                  |
+
+Instalar desde la consola: prop-types
 
 ## El estado de React
 
@@ -56,14 +60,12 @@ Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamen
 
 - Manejo de un evento onClick para ejecutar una función al hacer clic en un botón.
 
-- Actualización del estado en la vista de la aplicación web.
+- Actualización del estado la variable en el navegador.
 
 |                 | Archivos             |
 | --------------- |:--------------------:|
 | Creados (5)     | CounterApp.jsx       |
 | Modificados (2) | index.html, main.jsx |
-
-
 
 Una variación de la aplicación de prueba que se genera por defecto en React, explica como se implementa el hook useState y como el valor de una variable de estado se actualiza con un clic en la aplicación web.
 
