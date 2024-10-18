@@ -11,7 +11,7 @@ export const InvoiceApp = () => {
     // items se renombra a itemsInitial
     const { total, id, name, client, company, items: itemsInitial } = getInvoice();
 
-    // Estado para los valores de los <input> del producto, precio y cantidad
+    // Estado para los valores de los <input> del producto, precio y cantidad (Los valores por defecto son Strings vacios)
     const [productValue, setProductValue] = useState('');
     const [priceValue, setPriceValue] = useState('');
     const [quantityValue, setQuantityValue] = useState('');
@@ -22,6 +22,8 @@ export const InvoiceApp = () => {
     // Contador para los IDs de nuevos productos
     // Se inicializa en 4, porque hay 3 productos iniciales en la factura
     const [counter, setCounter] = useState(4);
+
+    // Recuerda que puedes ver el valor que se guarda en la variable de estado desde las herramientas de desarrollo de Chrome, seccion "components"
 
     // Función para manejar el cambio en el input del producto
     // La propiedad target sirve para obtener el elemento HTML donde ocurrio el evento
@@ -55,7 +57,7 @@ export const InvoiceApp = () => {
         if (productValue.trim().length <= 1) return;
         if (priceValue.trim().length <= 1) return;
 
-        // No es un número introducido
+        // No es un número introducido (se realiza esta validación, porque de lo contrario si se introduce un texto, en el navegador muestra un NaN en la lista de items)
         if (isNaN(priceValue.trim())) {
             // alert muestra un cuadro de dialogo en el navegador
             alert('Error: el precio no es un número');
@@ -73,10 +75,12 @@ export const InvoiceApp = () => {
         }
 
         // Actualizamos la lista de items con el nuevo producto
+        // Recordar que con el operador Spread se crea una copia de los elementos del arreglo items
         setItems([...items, {
+            // El nuevo item es un objeto que contiene los valores introducidos en el formulario.
             id: counter,
             product: productValue.trim(),
-            // Existen 2 formas de convertir un String a un number: operador unario y parseInt
+            // Existen 2 formas de convertir un String a un number: operador unario (+) y parseInt (como argumento se pasa la cadena de texto y la base 10)
             price: +priceValue.trim(),
             quantity: parseInt(quantityValue.trim(), 10)
         }]);
@@ -117,14 +121,17 @@ export const InvoiceApp = () => {
 
                         {/* Formulario para agregar nuevos items */}
                         {/* onSubmit es un evento que se activa cuando se envia el formulario, en este caso se llama a la función */}
+                        {/* La clase w-50 establece el ancho a un 50% del contenedor padre */}
                         <form className="w-50" onSubmit={onInvoiceItemsSubmit}>
                             <input
                                 type="text"
                                 name="product"
                                 value={productValue}
+                                // placeholder muestra un mensaje inicial en el campo del formulario
                                 placeholder="Producto"
+                                // Aplica estilos para el campo del formulario
                                 className="form-control m-3"
-                                // onChange es un evento que se activa cuando cambia el valor introducido en el campo
+                                // onChange es un evento que se activa cuando cambia el valor introducido en el campo (atributo value)
                                 onChange={onProductChange} />
                             <input
                                 type="text"
@@ -133,7 +140,7 @@ export const InvoiceApp = () => {
                                 placeholder="Precio"
                                 className="form-control m-3"
                                 // Es una opción para llamar a la función, pero se recomienda omitir el parametro si se pasa al llamado de la función como argumento
-                                onChange={event => onPriceChange(event)} />
+                                onChange={(event) => onPriceChange(event)} />
                             <input
                                 type="text"
                                 name="quantity"
