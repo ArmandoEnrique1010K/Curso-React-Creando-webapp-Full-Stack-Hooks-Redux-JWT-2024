@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'; // Importamos PropTypes para validar las propiedades del componente.
 
+// Recibe las propiedades title y client
 export const ClientView = ({ title, client }) => {
     // Desestructuramos las propiedades del objeto client
     const {

@@ -24,11 +24,13 @@ export const InvoiceApp = () => {
                     </div>
                     <div className="card-body">
                         {/* Componente que muestra el ID y el nombre de la factura */}
+                        {/* Para el componente InvoiceView se pasa las propiedades id y name, los valores se obtienen del service. Se realiza el mismo procedimiento con algunos componentes */}
                         <InvoiceView id={id} name={name} />
 
                         <div className="row my-3">
                             <div className="col">
                                 {/* Componente que muestra los datos del cliente */}
+                                {/* Pasa la propiedad title con un valor estatico para mostrar un titulo */}
                                 <ClientView title="Datos del cliente" client={client} />
                             </div>
 
