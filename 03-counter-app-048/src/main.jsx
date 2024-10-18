@@ -10,6 +10,7 @@ import { CounterApp } from './CounterApp'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* Renderizamos el componente CounterApp y le pasamos una propiedad inicial llamada 'value' con un valor de 7. */}
+    {/* Si se llegara a pasar "7" como un String a la prop value, al hacer clic en el botón se concatenará varios "1" en lugar de sumarlos */}
     <CounterApp value={7} />
   </React.StrictMode>
 )
