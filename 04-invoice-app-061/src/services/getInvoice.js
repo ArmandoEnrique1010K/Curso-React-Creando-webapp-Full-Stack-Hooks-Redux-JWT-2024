@@ -17,5 +17,7 @@ export const getInvoice = () => {
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0); // Sumamos todos los valores del arreglo resultante.
 
   // Devolvemos la factura original con el total calculado agregado como una nueva propiedad.
+  // Si se pasa la propiedad total y su valor esta contenido en una variable es el mismo nombre que la propiedad, se puede simplificar de la siguiente manera:
+  // "total: total" se simplifica a "total"
   return { ...invoice, total };
 };

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'; // Importamos PropTypes para validar las propiedades del componente.
 
+// Recibe las propiedades id y name
 export const InvoiceView = ({ id, name }) => {
     return (
         <>

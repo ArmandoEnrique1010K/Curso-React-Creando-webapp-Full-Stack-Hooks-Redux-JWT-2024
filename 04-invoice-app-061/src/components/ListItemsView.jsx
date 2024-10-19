@@ -18,6 +18,7 @@ export const ListItemsView = ({ title, items }) => {
                     {/* Mapeamos los items para crear una fila por cada producto */}
                     {items.map(({ id, product, price, quantity }) => (
                         // Usamos el componente RowItemView para cada item
+                        // Como RowItemView es el componente hijo de ListItemsView, se asigna el id al atributo key de cada componente hijo
                         <RowItemView
                             key={id}
                             product={product}

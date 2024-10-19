@@ -11,6 +11,8 @@ import { ListItemsView } from "./components/ListItemsView";
 // Importamos el componente que muestra el total de la factura.
 import { TotalView } from "./components/TotalView";
 
+// El componente InvoiceApp se traslado fuera de la carpeta components, recordar que el componente que contiene el sufijo "App" representa el componente principal de la aplicación web.
+// El componente main representa la puerta de entrada a la aplicación web, luego del archivo index.html
 export const InvoiceApp = () => {
     // Desestructuramos los datos de la factura obtenidos de la función getInvoice.
     const { total, id, name, client, company, items } = getInvoice();

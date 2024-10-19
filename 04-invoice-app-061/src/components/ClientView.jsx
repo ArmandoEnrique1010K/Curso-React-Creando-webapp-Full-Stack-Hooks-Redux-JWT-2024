@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'; // Importamos PropTypes para validar las propiedades del componente.
 
-// Recibe las propiedades title y client
 export const ClientView = ({ title, client }) => {
     // Desestructuramos las propiedades del objeto client
     const {
         name: nameClient, // Renombramos 'name' a 'nameClient'
         lastName,
+        // Se aplica la desestructuración a la propiedad address para obtener sus propiedades como variables
         address: {
             country,
             city,
