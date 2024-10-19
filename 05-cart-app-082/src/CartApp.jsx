@@ -20,9 +20,12 @@ export const CartApp = () => {
                 <div className="row">
                     {/* Renderiza cada producto dentro de una tarjeta */}
                     {products.map(prod => (
+                        // La clase col-4 define un contenedor de tipo columna que mide 4 unidades de largo (como máximo puede haber 3 contenedores con la misma clase 'col-4' en una fila)
                         <div className="col-4 my-2" key={prod.id}>
+                            {/* Se aplica el estilo de card de Bootstrap para cada producto */}
                             <div className="card">
                                 <div className="card-body">
+                                    {/* Muestra los valores de las propiedades de cada uno de los objetos del arreglo products */}
                                     <h5 className="card-title">{prod.name}</h5>
                                     <p className="card-text">{prod.description}</p>
                                     <p className="card-text">$ {prod.price}</p>
@@ -58,6 +61,8 @@ export const CartApp = () => {
                         <tfoot>
                             {/* Mostrar el total de la compra */}
                             <tr>
+                                {/* El atributo colSpan combina celdas de forma horizontal */}
+                                {/* Las clases text-end y text-start sirve para alinear el texto a la derecha y a la izquierda. La clas fw-bold aplica negrita al texto */}
                                 <td colSpan="3" className="text-end fw-bold">Total</td>
                                 <td colSpan="2" className="text-start fw-bold">12345</td>
                             </tr>
