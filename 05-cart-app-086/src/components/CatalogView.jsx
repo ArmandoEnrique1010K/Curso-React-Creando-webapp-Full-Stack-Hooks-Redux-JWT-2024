@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productService";
 import { ProductCardView } from "./ProductCardView";
+import PropTypes from "prop-types";
 
+// Recibe una propiedad de tipo función
 export const CatalogView = ({ handler }) => {
 
     // Estado local para almacenar los productos obtenidos
@@ -31,4 +33,9 @@ export const CatalogView = ({ handler }) => {
             </div>
         </>
     );
+}
+
+// Define propTypes para cada propiedad o prop que se pasa a este componente
+CatalogView.propTypes = {
+    handler: PropTypes.func,
 }

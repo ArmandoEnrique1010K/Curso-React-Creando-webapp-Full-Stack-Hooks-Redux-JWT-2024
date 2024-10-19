@@ -4,6 +4,7 @@ import { CatalogView } from "./components/CatalogView"
 
 // Estado inicial del carrito de compras, que es un arreglo vacío ya que no hay productos seleccionados al inicio
 const inititalCartItems = [
+    // Puedes descomentar esto para mostrar un producto inicial vacio en el carrito
     // {
     //     product: {},   // Detalles del producto que se añadirá al carrito
     //     quantity: 0,   // Cantidad del producto que se añadirá al carrito
