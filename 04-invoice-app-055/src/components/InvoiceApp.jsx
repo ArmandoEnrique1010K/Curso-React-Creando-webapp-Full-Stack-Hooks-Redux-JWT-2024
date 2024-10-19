@@ -41,6 +41,7 @@ export const InvoiceApp = () => {
                         </ul>
 
                         {/* Fila que contiene los datos del cliente y de la empresa */}
+                        {/* La clase row define un contenedor de tipo fila, mientras que la clase col, un contenedor de tipo columna */}
                         <div className="row my-3">
                             {/* Columna para los datos del cliente */}
                             <div className="col">
