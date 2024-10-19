@@ -14,5 +14,5 @@ export const TotalView = ({ total }) => {
 
 // Validación de las propiedades del componente
 TotalView.propTypes = {
-    total: PropTypes.number.isRequired, // total es un número obligatorio
+    total: PropTypes.number.isRequired, // total es un número
 }

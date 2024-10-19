@@ -32,20 +32,20 @@ const invoiceInitial = {
 // Componente principal de la aplicación de facturación
 export const InvoiceApp = () => {
 
-    // Estado para controlar la visibilidad del formulario
-    const [activeForm, setActiveForm] = useState(false);
-
-    // Estado para almacenar el total de la factura
-    const [total, setTotal] = useState(0);
-
-    // Contador para asignar IDs a los ítems
-    const [counter, setCounter] = useState(4);
-
     // Estado para almacenar la información de la factura
     const [invoice, setInvoice] = useState(invoiceInitial);
 
     // Estado para almacenar los ítems de la factura
     const [items, setItems] = useState([]);
+
+    // Contador para asignar IDs a los ítems
+    const [counter, setCounter] = useState(4);
+
+    // Estado para almacenar el total de la factura
+    const [total, setTotal] = useState(0);
+
+    // Se define un estado para controlar la visibilidad del formulario
+    const [activeForm, setActiveForm] = useState(false);
 
     // Desestructuración de los valores del estado de la factura
     const { id, name, client, company } = invoice;
@@ -69,8 +69,10 @@ export const InvoiceApp = () => {
         // console.log('el items cambio!')
     }, [items]);
 
-    // Manejador para agregar ítems a la factura
+    // Se define la siguiente función manejadora para agregar ítems a la factura
     const handlerAddItems = ({ product, price, quantity }) => {
+
+        // Antes habia un formulario en este componente, solamente permanece aqui la logica para agregar un nuevo item
 
         // Agrega un nuevo ítem a la lista de ítems
         setItems([...items, {
@@ -84,12 +86,12 @@ export const InvoiceApp = () => {
         setCounter(counter + 1);
     }
 
-    // Manejador para eliminar un ítem de la factura
+    // Se define el manejador para eliminar un ítem de la factura
     const handlerDeleteItem = (id) => {
         setItems(items.filter(item => item.id !== id)); // Filtra los ítems para eliminar el ítem con el ID especificado
     }
 
-    // Manejador para activar o desactivar el formulario
+    // Se define el manejador para activar o desactivar el formulario
     const onActiveForm = () => {
         setActiveForm(!activeForm); // Cambia el estado de visibilidad del formulario
     }
@@ -125,12 +127,14 @@ export const InvoiceApp = () => {
                         {/* Muestra el total de la factura */}
                         <TotalView total={total} />
 
-                        {/* Botón para activar/desactivar el formulario, el texto cambia segun el valor de activeForm */}
+                        {/* Botón para activar/desactivar el formulario, el texto cambia segun el valor de activeForm mediante un operador ternario */}
                         <button className="btn btn-secondary" onClick={onActiveForm}>
                             {!activeForm ? 'Agregar Item' : 'Cerrar Form'}
                         </button>
 
                         {/* Muestra el formulario si está activo, utiliza un operador || en lugar de un operador ternario */}
+                        {/* Tambien conocido como operador ternario simplificado se define asi: condición || muestra el componente si la condición es falsa */}
+                        {/* Por otro lado se puede enviar funciones como valores de las props a los componentes hijos, en este caso la prop handler pasa la función para agregar un nuevo Item */}
                         {!activeForm || <FormItemsView handler={handlerAddItems} />}
                     </div>
                 </div>

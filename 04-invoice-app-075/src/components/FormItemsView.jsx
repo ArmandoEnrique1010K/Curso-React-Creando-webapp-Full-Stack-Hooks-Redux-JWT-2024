@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types'; // Importamos PropTypes para validar las propiedades del componente.
 
-// Componente para manejar la entrada de ítems de la factura
+// Componente para manejar la entrada de ítems de la factura (recibe una prop handler)
+// Solamente se traslada desde el componente InvoiceApp la logica necesaria para manejar los campos del formulario
 export const FormItemsView = ({ handler }) => {
 
     // Estado para almacenar los datos del formulario
@@ -41,16 +42,22 @@ export const FormItemsView = ({ handler }) => {
         event.preventDefault(); // Previene la recarga de la página al enviar el formulario
 
         // Validaciones de entrada
-        if (product.trim().length <= 1) return; // Verifica que el producto no esté vacío
+        if (product.trim().length <= 1) {
+            // Verifica que el producto no este vacio
+            alert('Error: el nombre del producto debe tener más de un caracter');
+            return;
+        };
 
         if (price.trim().length <= 1 || isNaN(price.trim())) { // Verifica que el precio tenga 2 cifras o que sea un número
-            alert('Error: El precio debe ser un número');
+            alert('Error: El precio debe tener más de 1 caracter y debe ser un número');
             return;
         }
         if (quantity < 1 || isNaN(quantity.trim())) { // Verifica que la cantidad sea mayor que o que sea un número
             alert('Error: La cantidad debe ser un número mayor a 0');
             return;
         }
+
+        // Ten en cuenta que como se pasa una función al componente hijo, la función se utiliza cuando se le llama y se le pasa los argumentos correspondientes
 
         // Llama al manejador pasado como prop con los datos del formulario
         handler(formItemsState);
