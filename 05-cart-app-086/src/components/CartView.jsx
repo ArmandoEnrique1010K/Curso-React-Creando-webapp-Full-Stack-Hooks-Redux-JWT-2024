@@ -55,5 +55,5 @@ export const CartView = ({ items }) => {
 
 // Define propTypes para cada propiedad o prop que se pasa a este componente
 CartView.propTypes = {
-    items: PropTypes.array,
+    items: PropTypes.array.isRequired,
 }

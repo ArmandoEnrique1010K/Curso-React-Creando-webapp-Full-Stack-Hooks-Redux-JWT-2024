@@ -31,9 +31,9 @@ export const ProductCardView = ({ handler, id, name, description, price }) => {
 
 // Define propTypes para cada propiedad o prop que se pasa a este componente
 ProductCardView.propTypes = {
-    handler: PropTypes.func,
-    id: PropTypes.number,
-    name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number
+    handler: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
 }

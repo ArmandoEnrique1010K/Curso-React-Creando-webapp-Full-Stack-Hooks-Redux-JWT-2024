@@ -37,5 +37,5 @@ export const CatalogView = ({ handler }) => {
 
 // Define propTypes para cada propiedad o prop que se pasa a este componente
 CatalogView.propTypes = {
-    handler: PropTypes.func,
+    handler: PropTypes.func.isRequired,
 }
