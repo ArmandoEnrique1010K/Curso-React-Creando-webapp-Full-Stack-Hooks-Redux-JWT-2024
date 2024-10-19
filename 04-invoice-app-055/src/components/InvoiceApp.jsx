@@ -8,6 +8,7 @@ export const InvoiceApp = () => {
     const { id, name, client, company, items } = getInvoice();
 
     // Desestructuramos los datos del cliente para obtener su nombre, apellido y dirección
+    // Se cambia el nombre de la propiedad name a nameClient
     const { name: nameClient, lastName, address } = client;
 
     // Desestructuramos la dirección del cliente para obtener detalles como país, ciudad, calle y número
@@ -19,7 +20,10 @@ export const InvoiceApp = () => {
             {/* Contenedor principal con una clase de Bootstrap para centrar y agregar márgenes */}
             <div className="container">
                 {/* Tarjeta de Bootstrap que contiene la factura */}
-                {/* La sintaxis my-3 aplica un margen en el eje y de 3 unidades, existen variaciones */}
+                {/* La sintaxis my-3 aplica un margen en el eje y de 3 unidades, existen variaciones: */}
+                {/* m o p: margen o espaciado */}
+                {/* y, x, y, b, s o e: eje vertical, eje horizontal, arriba, abajo, izquierda o derecha */}
+                {/* 1, 2, 3, 4 o 5: el tamaño en unidades */}
                 <div className="card my-3">
                     {/* El titulo de la tarjeta */}
                     <div className="card-header">
@@ -43,6 +47,7 @@ export const InvoiceApp = () => {
                                 <h3>Datos del cliente</h3>
                                 <ul className="list-group">
                                     {/* Elemento activo para resaltar el nombre del cliente */}
+                                    {/* Se utiliza nameClient, el nombre para la propiedad del nombre del cliente */}
                                     <li className="list-group-item active">{nameClient} {lastName}</li>
                                     <li className="list-group-item">{country} / {city}</li>
                                     <li className="list-group-item">{street} {number}</li>
@@ -75,6 +80,7 @@ export const InvoiceApp = () => {
                                 {/* Iteramos sobre la lista de items y mostramos cada producto en una fila de la tabla */}
                                 {/* Se aplica la desestructuración del elemento (objeto) para obtener sus propiedades como variables */}
                                 {items.map(({ id, product, price, quantity }) => (
+                                    // El atributo key contiene el identificador único asociado a cada elemento
                                     <tr key={id}>
                                         <td>{product}</td>
                                         <td>{price}</td>
