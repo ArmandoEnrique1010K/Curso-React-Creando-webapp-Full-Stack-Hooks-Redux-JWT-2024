@@ -16,7 +16,7 @@ export const getInvoice = () => {
   return { ...invoice, total };
 };
 
-// Función para calcular el total de los items
+// Función para calcular el total de los items, requiere un argumento de tipo arreglo (los items)
 export const calculateTotal = (items = []) => {
   return items
     .map((item) => item.price * item.quantity) // Multiplica el precio por la cantidad

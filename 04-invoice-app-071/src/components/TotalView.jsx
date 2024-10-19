@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const TotalView = ({ total }) => {
     return (
         <>
@@ -6,4 +8,9 @@ export const TotalView = ({ total }) => {
             </div>
         </>
     );
+}
+
+// Es necesario definir prop-types
+TotalView.propTypes = {
+    total: PropTypes.number
 }
