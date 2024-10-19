@@ -10,6 +10,10 @@ export const getInvoice = () => {
   //     total = total + item.price * item.quantity;
   // });
 
+  // El método reduce en JavaScript se utiliza para reducir un arreglo a un solo valor, aplicando una función que acumula cada elemento del arreglo y un valor inicial para el acumulador.
+  // La función requiere 2 parametros: accumulator (el acumulador de valores o elementos del arreglo) y currentValue (el valor actual)
+  // Por lo general se utiliza sumar números, concatenar cadenas, u otras operaciones que necesiten acumular un resultado a partir de un arreglo.
+ 
   // Utilizamos map para crear un nuevo arreglo con los totales de cada producto
   // y luego usamos reduce para sumar todos los totales.
   const total = invoice.items
