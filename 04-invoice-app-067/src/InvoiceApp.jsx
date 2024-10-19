@@ -26,10 +26,16 @@ export const InvoiceApp = () => {
     // Recuerda que puedes ver el valor que se guarda en la variable de estado desde las herramientas de desarrollo de Chrome, seccion "components"
 
     // Función para manejar el cambio en el input del producto
-    // La propiedad target sirve para obtener el elemento HTML donde ocurrio el evento
+    // La propiedad "target" (se obtiene del objeto "event" que representa el evento) sirve para obtener el elemento HTML donde ocurrio el evento
     const onProductChange = ({ target }) => {
         // la propiedad value representa el valor introducido en el <input> desde el navegador
+
+        // Descomentar esto si se quiere imprimir en la consola el elemento HTML luego de introducir un valor en el campo
+        // console.log(target);
+
         console.log(target.value);
+
+        // Establece en el estado productValue el valor introducido
         setProductValue(target.value);
     };
 
@@ -47,30 +53,43 @@ export const InvoiceApp = () => {
 
     // Función para manejar el envío del formulario de productos
     const onInvoiceItemsSubmit = (event) => {
-        // Previene el comportamiento por defecto del formulario
+        // Previene el comportamiento por defecto del formulario (muestra los nombres de los campos y datos introducidos en la barra del navegador y redirige a una pagina que no esta definida)
         event.preventDefault();
 
         // Validaciones para los campos del formulario
-        // Si se cumple la condición, no retorna nada y detiene la ejecución de la función
+        // Siguen este patrón: si se cumple la condición, no retorna nada y detiene la ejecución de la función
 
-        // Cantidad de caracteres introducidos
-        if (productValue.trim().length <= 1) return;
-        if (priceValue.trim().length <= 1) return;
+        // Evalua la cantidad de caracteres introducidos
 
-        // No es un número introducido (se realiza esta validación, porque de lo contrario si se introduce un texto, en el navegador muestra un NaN en la lista de items)
+        // El metodo global trim sirve para eliminar los espacios en blanco introducidos que estan por demás
+        // La propiedad length sirve para obtener la cantidad de caracteres
+        if (productValue.trim().length <= 1) {
+            // La función global alert muestra un cuadro de dialogo en el navegador
+            alert('Error: el nombre del producto debe tener más de un caracter');
+            return;
+        }
+
+        if (priceValue.trim().length <= 1) {
+            alert('Error: el precio debe tener 2 digitos');
+            return;
+        }
+
+        // Evalua si es un número introducido (se realiza esta validación, porque de lo contrario si se introduce un texto, en el navegador muestra un NaN en la lista de items)
+
+        // La función global inNaN valida que se haya introducido un número (se realiza esta validación, porque de lo contrario si se introduce un texto, en el navegador muestra un NaN en la lista de items)
         if (isNaN(priceValue.trim())) {
-            // alert muestra un cuadro de dialogo en el navegador
             alert('Error: el precio no es un número');
             return;
         }
 
-        // Valor númerico introducido
-        if (quantityValue < 1) {
-            alert('Error: la cantidad tiene que ser mayor a 0');
-            return;
-        }
         if (isNaN(quantityValue.trim())) {
             alert('Error: la cantidad no es un número');
+            return;
+        }
+
+        // Evalua el valor introducido
+        if (quantityValue < 1) {
+            alert('Error: la cantidad tiene que ser mayor a 0');
             return;
         }
 
@@ -78,8 +97,12 @@ export const InvoiceApp = () => {
         // Recordar que con el operador Spread se crea una copia de los elementos del arreglo items
         setItems([...items, {
             // El nuevo item es un objeto que contiene los valores introducidos en el formulario.
+            // Recuerda que si es el primer elemento introducido, se asigna 4 al id (valor por defecto)
             id: counter,
+
+            // Recuerda que trim sirve para eliminar los espacios en blanco introducidos que estan por demás
             product: productValue.trim(),
+
             // Existen 2 formas de convertir un String a un number: operador unario (+) y parseInt (como argumento se pasa la cadena de texto y la base 10)
             price: +priceValue.trim(),
             quantity: parseInt(quantityValue.trim(), 10)
@@ -131,7 +154,7 @@ export const InvoiceApp = () => {
                                 placeholder="Producto"
                                 // Aplica estilos para el campo del formulario
                                 className="form-control m-3"
-                                // onChange es un evento que se activa cuando cambia el valor introducido en el campo (atributo value)
+                                // onChange es un evento que se activa cuando cambia el valor introducido en el campo (valor en el atributo value)
                                 onChange={onProductChange} />
                             <input
                                 type="text"
@@ -149,7 +172,7 @@ export const InvoiceApp = () => {
                                 className="form-control m-3"
                                 onChange={onQuantityChange} />
 
-                            {/* Botón para enviar el formulario */}
+                            {/* Botón para enviar el formulario, se aplica los estilos de Bootstrap */}
                             <button
                                 type="submit"
                                 className="btn btn-primary m-3">
