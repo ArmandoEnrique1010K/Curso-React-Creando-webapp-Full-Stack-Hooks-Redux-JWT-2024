@@ -4,7 +4,10 @@ import { CatalogView } from "./components/CatalogView";
 import { useItemsCart } from "./hooks/useItemsCart";
 
 export const CartApp = () => {
-    // Utiliza el hook para obtener los elementos del carrito y las funciones para manejar la adición y eliminación de productos
+
+    // En lugar de utilizar toda la logica JavaScript definida en este componente, se utiliza el hook personalizado useItemsCart (se traslado toda la logica JavaScript hacia ese componente)
+
+    // Utiliza el hook personalizado para obtener los elementos del carrito y las funciones para manejar la adición y eliminación de productos
     const { cartItems, handlerAddProductCart, handlerDeleteProductCart } = useItemsCart();
 
     return (
@@ -24,3 +27,5 @@ export const CartApp = () => {
         </>
     );
 };
+
+// Hasta este momento la aplicación web debe ejecutarse correctamente sin errores de tal manera que pueda agregar un producto al carrito y al actualizar la pagina web, los productos se queden almacenados en el sessionStorage del navegador. Por otro lado, al eliminar todos los productos del carrito y recargar la pagina web, no deberia mostrar el carrito porque no hay productos en el carrito.
