@@ -41,5 +41,6 @@ export const UsersList = ({ users = [], handlerRemoveUser, handlerUserSelectedFo
 
 UsersList.propTypes = {
     users: PropTypes.array.isRequired,
-    handlerRemoveUser: PropTypes.func.isRequired
+    handlerRemoveUser: PropTypes.func.isRequired,
+    handlerUserSelectedForm: PropTypes.func.isRequired
 }
