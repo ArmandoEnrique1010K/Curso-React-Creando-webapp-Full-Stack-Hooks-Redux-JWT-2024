@@ -8,6 +8,7 @@ export const CartApp = () => {
     // En lugar de utilizar toda la logica JavaScript definida en este componente, se utiliza el hook personalizado useItemsCart (se traslado toda la logica JavaScript hacia ese componente)
 
     // Utiliza el hook personalizado para obtener los elementos del carrito y las funciones para manejar la adición y eliminación de productos
+    // Sigue la sintaxis de un objeto desestructurado que contiene solamente los modulos del hook personalizado que se van a utilizar en este componente y sus componentes hijos
     const { cartItems, handlerAddProductCart, handlerDeleteProductCart } = useItemsCart();
 
     return (
