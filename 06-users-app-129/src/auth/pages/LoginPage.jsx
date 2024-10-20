@@ -35,45 +35,24 @@ export const LoginPage = ({ handlerLogin }) => {
 
     // Función para manejar el envío del formulario
     const onSumbit = (event) => {
-
         // Prevenir la recarga de la página al enviar el formulario
         event.preventDefault();
 
         // Validar que todos los campos del formulario estén completos
         if (!username || !password) {
-
             // Mostrar un mensaje de alerta con SweetAlert si algún campo está vacío
             Swal.fire({
                 title: "Error de validación",
                 text: "Username y Password requeridos",
                 icon: "error"
             });
-
-            // Reinicia el formulario a sus valores iniciales
-            setLoginForm(initialLoginForm);
         }
 
-        // Implementar un login simulado
-        if (username === 'admin' && password === '12345') {
-            // En lugar de mostrar un mensaje de éxito o se realiza la acción deseada
-            // Swal.fire({
-            //     title: "Inicio de sesión exitoso",
-            //     text: "Bienvenido!",
-            //     icon: "success"
-            // });
+        // Recuerda que la función realiza una validación más, por lo cual no se valida aqui por el texto introducido en el campo
+        // Se llama función handlerLogin para iniciar sesión
+        handlerLogin({ username, password });
 
-            // Se llama función handlerLogin para iniciar sesión
-            handlerLogin({ username, password });
-        } else {
-            // Mostrar un mensaje de alerta si las credenciales son incorrectas
-            Swal.fire({
-                title: "Error Login",
-                text: "Username o Password invalidos",
-                icon: "error"
-            });
-        }
-
-        // Reiniciar el formulario a sus valores iniciales
+        // Reinicia el formulario a sus valores iniciales
         setLoginForm(initialLoginForm);
     }
 

@@ -241,6 +241,8 @@ Archivos creados: Navbar, CartRoutes
 
 - Servicio que contiene las credenciales del usuario estatico
 
+- Inicia sesión con las credenciales "admin" y "12345"
+
 - Archivos creados: loginReducer, Navbar, useAuth, authService
 
 - Archivos modificados: UsersApp, LoginPage, 
