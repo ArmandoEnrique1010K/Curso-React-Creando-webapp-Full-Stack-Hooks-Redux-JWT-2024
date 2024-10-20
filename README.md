@@ -219,39 +219,47 @@ Archivos creados: Navbar, CartRoutes
 
 123
 
+
+
+- COMPONENTES
+
+
+
 129
 
 ## Rutas en la aplicación usuarios
 
--
+136
 
 ## Contexto de React en la aplicación usuarios
 
--
+140
+
+143
 
 ## API REST carro de compras
 
--
+162
 
 ## API REST usuarios
 
--
+174
 
 ## Comunicación entre frontend y backend carro de compras
 
--
+178
 
 ## Comunicación entre frontend y backend usuarios
 
--
+183
 
 ## Validaciones en API REST usuarios
 
--
+185
 
 ## Integrando validación desde el backend al frontend usuarios
 
--
+191
 
 ## Spring Security y JWT en API REST usuarios
 
