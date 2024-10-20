@@ -82,7 +82,7 @@ Aplica los conceptos fundamentales de React como el uso de componentes propios y
 npm install prop-types
 ```
 
-## El estado de React
+## Aplicación contador
 
 **Proyecto**: `03-counter-app`
 
@@ -94,11 +94,11 @@ Una variación de la aplicación de prueba que se genera por defecto en React, e
 
 - Actualización de la variable de estado en el navegador.
 
-|                    | Archivos                                      |
-| ------------------ |:---------------------------------------------:|
-| ➕ Creados (1)      | `CounterApp.jsx`                              |
-| 🔃 Modificados (2) | `index.html` y `main.jsx`                     |
-| 🗑️ Eliminados (4) | `assets`*, `index.css`, `app.css` y `app.jsx` |
+|                        | Archivos                                      |
+| ---------------------- |:---------------------------------------------:|
+| **➕ Creados (1)**      | `CounterApp.jsx`                              |
+| **🔃 Modificados (2)** | `index.html` y `main.jsx`                     |
+| **🗑️ Eliminados (4)** | `assets`*, `index.css`, `app.css` y `app.jsx` |
 
 **Comandos para instalar librerias externas**:
 
@@ -108,23 +108,25 @@ npm install prop-types
 
 ## Aplicación factura
 
-`04-invoice-app-55`
+**Proyecto 1**: `04-invoice-app-55`
 
-Separa los componentes de la aplicación: data, service y components, además utiliza datos estaticos para maquetarlos en la aplicación web y se aplican estilos con Bootstrap.
+Proyecto de una aplicación de tipo factura, en el que se aplican todos los conceptos estudiados hasta el momento.
 
+- Estructura de componentes de una aplicación web con React (data, service y components).
 
+- Definición de datos estaticos de la aplicación web.
 
-|                    | Archivos             |
-| ------------------ |:--------------------:|
-| ➕ Creados (17)     | CounterApp.jsx       |
-| 🔃 Modificados (1) | index.html, main.jsx |
-| 🗑️ Eliminados (5) |                      |
+- Maquetación de los datos en la vista de una aplicación web.
 
+- Aplicación de estilos con Bootstrap como contenedores, filas, columnas, tarjetas, listas y tablas.
 
+|                        | Archivos                                         |
+| ---------------------- |:------------------------------------------------:|
+| **➕ Creados (3)**      | `invoice.js`, `getInvoice.js` e `InvoiceApp.jsx` |
+| **🔃 Modificados (2)** | `index.html` y `main.jsx`                        |
+| **🗑️ Eliminados (4)** | `assets`*, `index.css`, `app.css` y `app.jsx`    |
 
----
-
-`04-invoice-app-61`
+**Proyecto 2**: `04-invoice-app-61`
 
 Aplica un nuevo servicio para calcular el total utilizando los datos, la composición de componentes para dividir el componente principal en subcomponentes y prop-types para los tipos de props que se pasan entre componentes.
 
@@ -139,11 +141,17 @@ Archivos modificados: getInvoice.js, InvoiceApp.jsx
 
 Archivos eliminados:
 
-|                    | Archivos             |
-| ------------------ |:--------------------:|
-| ➕ Creados (17)     | CounterApp.jsx       |
-| 🔃 Modificados (1) | index.html, main.jsx |
-| 🗑️ Eliminados (5) |                      |
+|                        | Archivos             |
+| ---------------------- |:--------------------:|
+| **➕ Creados (17)**     | CounterApp.jsx       |
+| **🔃 Modificados (1)** | index.html, main.jsx |
+| **🗑️ Eliminados (5)** |                      |
+
+
+
+
+
+
 
 
 
