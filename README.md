@@ -220,9 +220,12 @@ Archivos creados: Navbar, CartRoutes
 123
 
 - Ventana modal en lugar de un formulario en la misma pagina web
-- Estilos para una ventana modal
-- 
-- COMPONENTES
+- Estilos para una ventana modal, se separa la ventana modal en un nuevo componente
+- Se define un componente de tipo pagina web para contener la pagina de login en una capa auth/pages
+- Paginas web para iniciar sesión y mostrar la lista de usuarios.
+- Puedes elegir entre rederizar el formulario de inicio de sesión o la lista de usuarios para pruebas
+- COMPONENTES CREADOS: LoginPage, UserModalForm, UsersPage, styles.css
+- COMPONENTES MODIFICADOS: UserApp,  main.jsx
 
 129
 

@@ -1,43 +1,46 @@
+/* Estilo para la ventana modal cuando está abierta */
 .abrir-modal {
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para dar un efecto de superposición */
+    position: fixed; /* Posiciona la ventana modal de manera fija en la pantalla */
+    top: 0px; /* Alinea la parte superior de la ventana modal al borde superior de la pantalla */
+    left: 0px; /* Alinea la parte izquierda de la ventana modal al borde izquierdo de la pantalla */
+    width: 100%; /* Hace que la ventana modal ocupe todo el ancho de la pantalla */
+    height: 100%; /* Hace que la ventana modal ocupe toda la altura de la pantalla */
+    z-index: 1000; /* Asegura que la ventana modal se muestre por encima de otros elementos */
 }
- 
+
+/* Estilo para las animaciones */
 .animacion {
-    animation-duration: 2s;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-fill-mode: both;
+    animation-duration: 2s; /* Duración de la animación de 2 segundos */
+    animation-fill-mode: both; /* Mantiene el estado de la animación una vez finalizada */
+    -webkit-animation-duration: 2s; /* Prefijo para navegadores basados en WebKit */
+    -webkit-animation-fill-mode: both; /* Mantiene el estado de la animación para WebKit */
 }
- 
+
+/* Clase específica para la animación de desvanecimiento */
 .fadeIn {
-    animation-name: fadeIn;
-    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn; /* Asigna el nombre de la animación para que se ejecute */
+    -webkit-animation-name: fadeIn; /* Asigna el nombre de la animación para navegadores basados en WebKit */
 }
- 
+
+/* Definición de la animación "fadeIn" usando keyframes */
 @keyframes fadeIn {
     0% {
-        opacity: 0
+        opacity: 0; /* Comienza con una opacidad de 0, es decir, completamente transparente */
     }
- 
+
     to {
-        opacity: 1
+        opacity: 1; /* Termina con una opacidad de 1, es decir, completamente visible */
     }
 }
- 
+
+/* Definición de la animación "fadeIn" para navegadores basados en WebKit */
 @-webkit-keyframes fadeIn {
     0% {
-        opacity: 0
+        opacity: 0; /* Comienza con una opacidad de 0 para WebKit */
     }
- 
+
     to {
-        opacity: 1
+        opacity: 1; /* Termina con una opacidad de 1 para WebKit */
     }
 }
-
-
