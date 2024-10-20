@@ -1,9 +1,12 @@
+import PropTypes from "prop-types";
+
 // Componente que representa una fila en la tabla de usuarios
 export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSelectedForm }) => {
 
     // Función para llamar a la función de eliminar usuario por id
     const onRemoveUser = (id) => {
-        handlerRemoveUser(id); // Llama a la función proporcionada para eliminar el usuario
+        // Llama a la función proporcionada para eliminar el usuario
+        handlerRemoveUser(id);
     }
 
     return (
@@ -19,10 +22,10 @@ export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSel
                 <button
                     type="button"
                     className="btn btn-secondary btn-sm"
-                    // Llama a la función de selección de usuario, pasando los datos del usuario seleccionado
+                    // Llama a la función de selección de usuario, pasando los datos del usuario seleccionado (sin pasar la propiedad password)
                     onClick={() => handlerUserSelectedForm({ id, username, email })}
                 >
-                    update {/* Texto del botón para la acción de actualización */}
+                    update
                 </button>
             </td>
             {/* Botón para eliminar al usuario */}
@@ -33,9 +36,19 @@ export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSel
                     // Llama a la función de eliminación cuando se hace clic en el botón
                     onClick={() => onRemoveUser(id)}
                 >
-                    remove {/* Texto del botón para la acción de eliminación */}
+                    remove
                 </button>
             </td>
         </tr>
     );
 };
+
+UserRow.propTypes = {
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    handlerRemoveUser: PropTypes.func.isRequired,
+    handlerUserSelectedForm: PropTypes.func.isRequired,
+    // No se requiere la prop password
+    // password: PropTypes.string.isRequired 
+}

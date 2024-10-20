@@ -25,7 +25,8 @@ export const UsersApp = () => {
             <div className="row">
                 {/* Columna que contiene el formulario para agregar o actualizar usuarios */}
                 {
-                    !visibleForm || ( // Muestra el formulario solamente si visibleForm es true
+                    // Muestra el formulario solamente si visibleForm es true (no debe ser false)
+                    !visibleForm || (
                         <div className="col">
                             <UserForm
                                 handlerAddUser={handlerAddUser} // Función para agregar o actualizar un usuario
@@ -40,13 +41,13 @@ export const UsersApp = () => {
                 {/* Columna que contiene la lista de usuarios */}
                 <div className="col">
                     {
-                        visibleForm || ( // Si el formulario no es visible, muestra el botón para abrirlo
+                        // Si el formulario no es visible (visibleForm es false), muestra el botón para abrirlo
+                        visibleForm || (
                             <button className="btn btn-primary my-2" type="button" onClick={handlerOpenForm}>
                                 Nuevo usuario
                             </button>
                         )
                     }
-
                     {
                         // Condición ternaria para renderizar un mensaje o <UsersList> según la cantidad de usuarios
                         users.length === 0 ? (
@@ -67,3 +68,4 @@ export const UsersApp = () => {
         </div>
     );
 };
+

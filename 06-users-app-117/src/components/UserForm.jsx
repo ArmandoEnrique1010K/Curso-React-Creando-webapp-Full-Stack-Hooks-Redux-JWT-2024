@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react"
 import Swal from "sweetalert2";
 
@@ -35,12 +36,14 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
         // Validación: verifica que todos los campos estén completos
         // Aplica para el campo password si el id es igual a 0, recordar que || ejecuta la operación de izquierda a derecha si es verdadero
         if (!username || (!password && id === 0) || !email) {
+            // Muestra un mensaje de alerta si algun campo esta vacio
             Swal.fire({
                 title: "Error de validación",
                 text: "¡Debe completar los campos del formulario!",
                 icon: "error"
             });
-            return; // Detiene la ejecución si algún campo está vacío
+            // Detiene la ejecución si algún campo está vacío
+            return;
         }
 
         // Llama a la función para agregar o actualizar el usuario
@@ -52,8 +55,11 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
 
     // Función para cerrar el formulario y reiniciar su estado
     const onCloseForm = () => {
-        handlerCloseForm(); // Llama a la función para cerrar el formulario
-        setUserForm(initialUserForm); // Reinicia el formulario a su estado inicial
+        // Llama a la función para cerrar el formulario
+        handlerCloseForm();
+
+        // Reinicia el formulario a su estado inicial
+        setUserForm(initialUserForm);
     }
 
     return (
@@ -102,8 +108,14 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
                     id > 0 ? 'Editar' : 'Crear' // Cambia el texto del botón dependiendo del estado del usuario
                 }
             </button>
-            {/* Botón para cerrar el formulario */}
+            {/* Botón para cerrar el formulario, al hacer clic en el llama a la función onCloseForm */}
             <button className="btn btn-primary mx-2" type="button" onClick={onCloseForm}>Cerrar</button>
         </form>
     );
 };
+
+UserForm.propTypes = {
+    handlerAddUser: PropTypes.func.isRequired,
+    initialUserForm: PropTypes.object.isRequired,
+    userSelected: PropTypes.object.isRequired,
+}

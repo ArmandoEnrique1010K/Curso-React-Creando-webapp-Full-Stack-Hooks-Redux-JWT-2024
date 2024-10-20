@@ -4,10 +4,13 @@ export const usersReducer = (state = [], action) => {
     case "addUser":
       // Agrega un nuevo usuario al estado actual
       return [
-        ...state, // Mantiene los usuarios actuales
+        // Mantiene los usuarios actuales
+        ...state,
         {
-          ...action.payload, // Agrega los datos del nuevo usuario
-          id: new Date().getTime(), // Asigna un ID único basado en la marca de tiempo actual
+          // Agrega los datos del nuevo usuario
+          ...action.payload,
+          // Asigna un ID único basado en la marca de tiempo actual
+          id: new Date().getTime(),
         },
       ];
 
@@ -20,8 +23,10 @@ export const usersReducer = (state = [], action) => {
       return state.map((u) => {
         if (u.id === action.payload.id) {
           return {
-            ...action.payload, // Reemplaza los datos del usuario con la nueva información del payload
-            password: u.password, // Se mantiene la propiedad password (no se modifica para omitir ese campo)
+            // Reemplaza los datos del usuario con la nueva información del payload
+            ...action.payload,
+            // Se mantiene la propiedad password (para omitir ese campo, no se modifica el password)
+            password: u.password,
           };
         }
         return u; // Retorna los usuarios que no coinciden con el ID sin cambios
