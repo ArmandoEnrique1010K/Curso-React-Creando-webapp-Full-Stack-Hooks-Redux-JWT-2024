@@ -1,5 +1,7 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react"
 
+// Recibe las propiedades
 export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
 
     // Hook de estado para manejar los valores del formulario de usuario
@@ -10,9 +12,12 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
 
     // useEffect que actualiza el formulario cuando el usuario seleccionado cambia
     useEffect(() => {
+        // Establece los valores del formulario con los datos del usuario seleccionado
         setUserForm({
-            ...userSelected, // Copia los valores del usuario seleccionado
-            password: '' // Resetea el campo password por seguridad (requiere ser rellando ese campo)
+            // Copia los valores del usuario seleccionado
+            ...userSelected,
+            // Resetea el campo password por seguridad (requiere ser rellando ese campo)
+            password: ''
         });
     }, [userSelected]);
 
@@ -36,6 +41,7 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
             return; // Detiene la ejecución si algún campo está vacío
         }
 
+        // Llama a la función para agregar el usuario
         handlerAddUser(userForm);
 
         // Reinicia el formulario a su estado inicial después de enviarlo
@@ -80,9 +86,16 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected }) => {
                 className="btn btn-primary"
                 type="submit">
                 {
-                    id > 0 ? 'Editar' : 'Crear' // Cambia el texto del botón dependiendo del estado del usuario
+                    // Cambia el texto del botón dependiendo del estado del usuario en el formulario (propiedad id)
+                    id > 0 ? 'Editar' : 'Crear'
                 }
             </button>
         </form>
     );
 };
+
+UserForm.propTypes = {
+    handlerAddUser: PropTypes.func.isRequired,
+    initialUserForm: PropTypes.object.isRequired,
+    userSelected: PropTypes.object.isRequired,
+}

@@ -15,6 +15,7 @@ const initialUsers = [
 
 // Estado inicial para el formulario del usuario (se traslada aqui) 
 const initialUserForm = {
+    // Se agrega la propiedad id (requerido para obtener el id del usuario en el formulario de editar)
     id: 0,
     username: '',
     password: '',
@@ -24,7 +25,7 @@ const initialUserForm = {
 // Componente principal de la aplicación UsersApp
 export const UsersApp = () => {
 
-    // Hook useReducer para manejar el estado de los usuarios con el usersReducer
+    // Hook useReducer para manejar el estado de los usuarios con la función centralizada usersReducer
     const [users, dispatch] = useReducer(usersReducer, initialUsers);
 
     // Hook useState para manejar el usuario seleccionado en el formulario
@@ -32,6 +33,7 @@ export const UsersApp = () => {
 
     // Función para agregar o actualizar un usuario
     const handlerAddUser = (user) => {
+        // La variable type determina el tipo de acción que se realizara
         let type;
 
         // Si el usuario no tiene un ID, se añade como nuevo; si tiene ID, se actualiza
@@ -41,24 +43,32 @@ export const UsersApp = () => {
             type = 'updateUser';
         }
 
+        // Ejecuta la acción definida en type con los datos del nuevo usuario
         dispatch({
-            // Simplifica type: type
+            // Simplifica "type: type" a "type"
             type,
-            payload: user, // Se envía el usuario como payload de la acción
+            // Se envía el usuario como payload de la acción
+            payload: user,
         });
+
+        // Imprime los datos del usuario en la consola
+        // console.log(user);
     }
 
     // Función para eliminar un usuario
     const handlerRemoveUser = (id) => {
         dispatch({
+            // Tipo de acción para eliminar usuario
             type: "removeUser",
-            payload: id, // Se envía el ID del usuario a eliminar como payload
+            // Se envía el ID del usuario a eliminar como payload
+            payload: id,
         });
     }
 
     // Función para seleccionar un usuario y cargar sus datos en el formulario
     const handlerUserSelectedForm = (user) => {
-        setUserSelected({ ...user }); // Se establece el usuario seleccionado en el estado del formulario
+        // Se establece el usuario seleccionado en el estado del formulario
+        setUserSelected({ ...user });
     }
 
     return (
@@ -69,6 +79,7 @@ export const UsersApp = () => {
                 {/* Columna que contiene el formulario para agregar o actualizar usuarios */}
                 <div className="col">
                     <UserForm
+                        // Pasa las siguientes props a UserForm
                         handlerAddUser={handlerAddUser}
                         initialUserForm={initialUserForm}
                         userSelected={userSelected}

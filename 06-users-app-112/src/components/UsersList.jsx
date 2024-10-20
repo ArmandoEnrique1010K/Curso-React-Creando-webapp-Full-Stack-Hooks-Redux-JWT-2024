@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { UserRow } from "./UserRow";
 
 // Componente que muestra la lista de usuarios en una tabla
@@ -25,7 +26,9 @@ export const UsersList = ({ users = [], handlerRemoveUser, handlerUserSelectedFo
                             id={id}
                             username={username}
                             email={email}
+                            // Se pasa la prop password
                             password={password}
+                            // Pasa las funciones como props
                             handlerRemoveUser={handlerRemoveUser}
                             handlerUserSelectedForm={handlerUserSelectedForm}
                         />
@@ -35,3 +38,8 @@ export const UsersList = ({ users = [], handlerRemoveUser, handlerUserSelectedFo
         </table>
     );
 };
+
+UsersList.propTypes = {
+    users: PropTypes.array.isRequired,
+    handlerRemoveUser: PropTypes.func.isRequired
+}

@@ -199,6 +199,10 @@ Archivos creados: Navbar, CartRoutes
 
 - Para editar un usuario, se requiere que introduzca la contraseña del usuario (esto se corregira en la siguiente sección)
 
+- ARCHIVOS CREADOS: usersReducer
+
+- ARCHIVOS MODIFICADOS: usersApp, usersList, userRow, userForm, 
+
 117
 
 - Se omite el campo password al momento de editar un usuario

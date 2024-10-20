@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // Componente que representa una fila en la tabla de usuarios
 export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSelectedForm, password }) => {
 
@@ -19,7 +21,7 @@ export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSel
                 <button
                     type="button"
                     className="btn btn-secondary btn-sm"
-                    // Otra forma es llamar a la función recibida como prop directamente, en este caso la función para editar el usuario, pasando todas sus propiedades
+                    // Otra forma es llamar a la función recibida como prop de forma directa sin definir una función intermedia, en este caso la función para editar el usuario, pasando todas sus propiedades
                     onClick={() => handlerUserSelectedForm({ id, username, email, password })}
                 >
                     update
@@ -30,7 +32,7 @@ export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSel
                 <button
                     type="button"
                     className="btn btn-danger btn-sm"
-                    // Llama a la función cuando se hace clic en el botón
+                    // Llama a la función cuando se hace clic en el botón (evento onClick)
                     onClick={() => onRemoveUser(id)}
                 >
                     remove
@@ -39,3 +41,12 @@ export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSel
         </tr>
     );
 };
+
+UserRow.propTypes = {
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    handlerRemoveUser: PropTypes.func.isRequired,
+    handlerUserSelectedForm: PropTypes.func.isRequired,
+    password: PropTypes.string.isRequired
+}
