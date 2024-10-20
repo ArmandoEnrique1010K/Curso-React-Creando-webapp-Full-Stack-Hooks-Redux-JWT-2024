@@ -1,13 +1,11 @@
 
 import { UserModalForm } from "../components/UserModalForm";
 import { UsersList } from "../components/UsersList";
-import { useUsers } from "../hooks/useUsers";
+// import { useUsers } from "../hooks/useUsers";
 
-// En React una pagina web esta compuesta por varios componentes
-// Toda la logica del componente UsersApp se traslada aqui pues contenia la lista de usuarios. Este componente representa una pagina web funcional UserPage
-export const UsersPage = () => {
-    // Desestructuramos el estado y las funciones del hook useUsers
-    const {
+// Ahora este componente recibe las propiedades que se pasan desde UserRoutes
+export const UsersPage = (
+    {
         users,
         userSelected,
         initialUserForm,
@@ -16,8 +14,11 @@ export const UsersPage = () => {
         handlerRemoveUser,
         handlerUserSelectedForm,
         handlerOpenForm,
-        handlerCloseForm,
-    } = useUsers();
+        handlerCloseForm
+    }
+) => {
+
+    // La llamada del hook useUsers se traslada al componente UserRoutes
 
     return (
         // Utilizamos un fragmento vacío para contener la ventana modal y el contenedor principal de la página

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 // Componente que representa una fila en la tabla de usuarios
 export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSelectedForm }) => {
@@ -28,6 +29,13 @@ export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSel
                     update
                 </button>
             </td>
+            {/* Botón para navegar hacia la pagina embebida del formulario de actualizar usuario (requiere el id del usuario) */}
+            <td>
+                <NavLink className={'btn btn-secondary btn-sm'} to={'/users/edit/' + id}>
+                    update route
+                </NavLink>
+            </td>
+
             {/* Botón para eliminar al usuario */}
             <td>
                 <button

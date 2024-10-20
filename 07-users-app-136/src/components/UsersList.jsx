@@ -16,6 +16,8 @@ export const UsersList = ({ users = [], handlerRemoveUser, handlerUserSelectedFo
                     <th>email</th>
                     {/* Columna para la acción de actualización */}
                     <th>update</th>
+                    {/* Columna para la acción de acutalización por medio de una pagina embebida */}
+                    <th>update route</th>
                     {/* Columna para la acción de eliminación */}
                     <th>remove</th>
                 </tr>

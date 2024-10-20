@@ -46,6 +46,16 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
             return;
         }
 
+        // Nueva validación para que el campo email incluya el caracter '@'
+        if (!email.includes('@')) {
+            Swal.fire({
+                title: "Error de validación de email",
+                text: "El email debe ser valido, incluir un @!",
+                icon: "error"
+            });
+            return;
+        }
+
         // Llama a la función para agregar o actualizar el usuario
         handlerAddUser(userForm);
 
@@ -108,8 +118,15 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
                     id > 0 ? 'Editar' : 'Crear' // Cambia el texto del botón dependiendo del estado del usuario
                 }
             </button>
-            {/* Botón para cerrar el formulario, al hacer clic en el llama a la función onCloseForm */}
-            <button className="btn btn-primary mx-2" type="button" onClick={onCloseForm}>Cerrar</button>
+
+            {/* Botón para cerrar el formulario, si el valor de la prop handlerCloseForm es undefined, no se mostrara el botón cerrar */}
+            {
+                !handlerCloseForm || <button
+                    className="btn btn-primary mx-2"
+                    type="button"
+                    onClick={onCloseForm}>
+                    Cerrar</button>
+            }
         </form>
     );
 };

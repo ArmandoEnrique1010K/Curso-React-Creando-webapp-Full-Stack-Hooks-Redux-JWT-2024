@@ -1,6 +1,7 @@
 import { useReducer, useState } from "react";
 import { usersReducer } from "../reducers/usersReducer";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 // Se traslada los estados iniciales
 
@@ -33,26 +34,11 @@ export const useUsers = () => {
   // Se define un estado para controlar la visibilidad del formulario
   const [visibleForm, setVisibleForm] = useState(false);
 
+  // Define navigate para redireccionar a otras rutas
+  const navigate = useNavigate();
+
   // Función para agregar o actualizar un usuario
   const handlerAddUser = (user) => {
-    // Primera forma
-    // Variable para determinar el tipo de acción
-    // let type;
-
-    // Si el usuario no tiene un ID, se añade como nuevo; si tiene ID, se actualiza
-    // if (user.id === 0) {
-    //   type = "addUser";
-    // } else {
-    //   type = "updateUser";
-    // }
-
-    // Dispara la acción correspondiente con los datos del usuario
-    // dispatch({
-    //   type,
-    //   payload: user, // Se envía el usuario como payload de la acción
-    // });
-
-    // Segunda forma
     // Determina si se va a agregar o actualizar un usuario dependiendo de si el usuario tiene ID
     dispatch({
       type: user.id === 0 ? "addUser" : "updateUser",
@@ -60,10 +46,7 @@ export const useUsers = () => {
     });
 
     // Muestra una alerta utilizando SweetAlert para confirmar la acción realizada
-    // Importa SweetAlert con el comando "npm install sweetalert2"
     Swal.fire({
-      // fire contiene un objeto con las propiedades title (titulo), text (texto) y icon (tipo de icono)
-      // Se utiliza un operador ternario para verificar si el usuario tiene ID y mostrar un mensaje de creación o actualización
       title: user.id === 0 ? "Usuario Creado" : "Usuario Actualizado",
       text:
         user.id === 0
@@ -74,20 +57,22 @@ export const useUsers = () => {
 
     // Cierra el formulario después de agregar o actualizar el usuario
     handlerCloseForm();
+
+    // Redirigir a la página de usuarios después de agregar o editar un usuario
+    navigate("/users");
   };
 
   // Función para eliminar un usuario
   const handlerRemoveUser = (id) => {
     // Muestra una alerta de confirmación antes de eliminar el usuario
     Swal.fire({
-      // Estructura de propiedades para un cuadro de alerta de tipo confirmación
       title: "¿Está seguro de que desea eliminar?",
       text: "¡Cuidado, el usuario será eliminado!",
       icon: "warning",
-      showCancelButton: true, // Mostrar botón cancelar
-      confirmButtonColor: "#3085d6", // Color del botón confirmar
-      cancelButtonColor: "#d33", // Color del botón cancelar
-      confirmButtonText: "Sí, eliminar", // Texto del botón de confirmación
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, eliminar",
     }).then((result) => {
       // Si el usuario confirma la eliminación...
       if (result.isConfirmed) {

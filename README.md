@@ -249,7 +249,17 @@ Archivos creados: Navbar, CartRoutes
 
 ## Rutas en la aplicación usuarios
 
-136
+- Se define las rutas para la aplicación usuarios:
+
+- Se agrega un componente para el registro de usuarios por medio de un formulario (no una ventana modal)
+
+- Validación del campo email
+
+- Ruta dinamica por el id
+
+- Archivos creados: RegisterPage, UsersPage, UserRoutes
+
+- Archivos modificados: useAuth, Navbar, UserForm, UserRow, UsersList, useUsers, main,UsersApp
 
 ## Contexto de React en la aplicación usuarios
 
