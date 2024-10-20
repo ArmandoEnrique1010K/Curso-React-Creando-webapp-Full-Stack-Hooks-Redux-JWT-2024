@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productService";
 import { ProductCardView } from "./ProductCardView";
+import PropTypes from "prop-types";
 
 export const CatalogView = ({ handler }) => {
 
@@ -31,4 +32,9 @@ export const CatalogView = ({ handler }) => {
             </div>
         </>
     );
+}
+
+// Define propTypes para cada propiedad o prop que se pasa a este componente
+CatalogView.propTypes = {
+    handler: PropTypes.func.isRequired,
 }

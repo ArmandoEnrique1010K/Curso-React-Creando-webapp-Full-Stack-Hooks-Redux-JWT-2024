@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const ProductCardView = ({ handler, id, name, description, price }) => {
     // Función para manejar el evento de agregar un producto al carrito
     const onAddProduct = (product) => {
@@ -21,4 +23,13 @@ export const ProductCardView = ({ handler, id, name, description, price }) => {
             </div>
         </>
     )
+}
+
+// Define propTypes para cada propiedad o prop que se pasa a este componente
+ProductCardView.propTypes = {
+    handler: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
 }
