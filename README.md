@@ -219,11 +219,10 @@ Archivos creados: Navbar, CartRoutes
 
 123
 
-
-
+- Ventana modal en lugar de un formulario en la misma pagina web
+- Estilos para una ventana modal
+- 
 - COMPONENTES
-
-
 
 129
 
