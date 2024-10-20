@@ -7,7 +7,7 @@ export const UserModalForm = ({ userSelected, initialUserForm, handlerAddUser, h
     return (
         // Se define un contenedor con clases personalizadas para la animación y el estilo de la ventana modal.
         // El archivo CSS asociado (`index.css`) contiene las reglas de estilo para estas clases.
-        <div className="abrir-modal animacion fadeInt">
+        <div className="abrir-modal animacion fadeIn">
             {/* La clase modal se utiliza para definir un contenedor que ocupa toda la pantalla */}
             {/* 
                 'tabIndex' indica si un elemento puede ser enfocado y si participa en la navegación del teclado (usando la tecla Tab).
