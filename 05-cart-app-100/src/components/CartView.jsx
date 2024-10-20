@@ -24,7 +24,7 @@ export const CartView = ({ handlerDelete, items }) => {
         handlerDelete(id); // Llama al manejador de eliminación pasado como prop
     }
 
-    // Función para navegar de vuelta al catálogo de productos
+    // Se define una función para navegar de vuelta al catálogo de productos
     const onCatalog = () => {
         // Redireccionamos a la ruta del catálogo
         navigate('/catalog');
@@ -79,7 +79,7 @@ export const CartView = ({ handlerDelete, items }) => {
                     </tr>
                 </tfoot>
             </table>
-            {/* Botón para continuar comprando, que navega al catálogo */}
+            {/* Se define el siguiente botón para continuar comprando, que navega al catálogo */}
             <button
                 className="btn btn-success"
                 onClick={onCatalog}

@@ -11,7 +11,7 @@ export const ProductCardView = ({ handler, id, name, description, price }) => {
     const onAddProduct = (product) => {
         console.log(product); // Imprimimos el producto en la consola para verificar
         handler(product); // Llamamos al manejador para agregar el producto al carrito
-        navigate('/cart'); // Redirecciona a la ruta del carrito después de agregar el producto
+        navigate('/cart'); // Se redirecciona a la ruta del carrito después de agregar el producto
     }
 
     return (

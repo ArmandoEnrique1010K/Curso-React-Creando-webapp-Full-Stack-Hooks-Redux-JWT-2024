@@ -29,3 +29,5 @@ export const CartApp = () => {
         </>
     )
 }
+
+// Hasta el momento se puede decir que hay 2 paginas web en la aplicación web, pero en el codigo fuente se han definidos 2 endpoints principales: "/catalog" y "/cart" para gestionar los componentes que se renderizaran cuando se acceda esos endpoints
