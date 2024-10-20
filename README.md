@@ -229,6 +229,22 @@ Archivos creados: Navbar, CartRoutes
 
 129
 
+- Utiliza useReducer para manejar el estado de login
+
+- sessionStorage para almacenar las credenciales del usuario (datos estaticos de un unico usuario)
+
+- logica para iniciar y cerrar sesión en la aplicación web
+
+- Navbar que se muestra si el usuario ha iniciado sesión
+
+- Hook personalizado para la logica para el login
+
+- Servicio que contiene las credenciales del usuario estatico
+
+- Archivos creados: loginReducer, Navbar, useAuth, authService
+
+- Archivos modificados: UsersApp, LoginPage, 
+
 ## Rutas en la aplicación usuarios
 
 136
