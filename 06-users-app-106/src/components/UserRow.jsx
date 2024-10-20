@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // Componente que representa una fila en la tabla de usuarios
 export const UserRow = ({ id, username, email }) => {
 
@@ -9,7 +11,7 @@ export const UserRow = ({ id, username, email }) => {
             <td>{username}</td>
             {/* Columna que muestra el email del usuario */}
             <td>{email}</td>
-            {/* Botón para actualizar la información del usuario */}
+            {/* Botón no funcional para actualizar la información del usuario */}
             <td>
                 <button
                     type="button"
@@ -18,7 +20,7 @@ export const UserRow = ({ id, username, email }) => {
                     update
                 </button>
             </td>
-            {/* Botón para eliminar al usuario */}
+            {/* Botón no funcional para eliminar al usuario */}
             <td>
                 <button
                     type="button"
@@ -30,3 +32,9 @@ export const UserRow = ({ id, username, email }) => {
         </tr>
     );
 };
+
+UserRow.propTypes = {
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+}

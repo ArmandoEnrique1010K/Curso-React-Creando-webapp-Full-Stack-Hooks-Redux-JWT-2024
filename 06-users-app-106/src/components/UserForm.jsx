@@ -7,6 +7,12 @@ const initialUserForm = {
     email: '',
 }
 
+// Puedes utilizar esto para establecer datos iniciales en el formulario
+// const initialUserForm = {
+//     username: 'texto',
+//     password: '12345',
+//     email: 'correo@example.com',
+// }
 
 export const UserForm = () => {
 
@@ -17,13 +23,18 @@ export const UserForm = () => {
     const { username, password, email } = userForm;
 
     // Función que se ejecuta cuando se cambia el valor de un campo del formulario
+
+    // Se desestructura la propiedad target del objeto event (target hace referencia al elemento <input> luego de renderizarlo en el navegador)
     const onInputChange = ({ target }) => {
-        // console.log(target.value) // Imprime el valor introducido en el campo del formulario
-        const { name, value } = target; // Obtiene el nombre y el valor del campo que ha cambiado
+        // Imprime el valor introducido en el campo del formulario
+        // console.log(target.value)
+
+        // Obtiene el nombre y el valor del campo que ha cambiado
+        const { name, value } = target;
 
         setUserForm({
             ...userForm, // Copia el estado actual del formulario
-            [name]: value, // Actualiza solo el campo que cambió usando el nombre del campo como clave
+            [name]: value, // Variable computada, actualiza solo el campo que cambió usando el nombre del campo como clave
         });
     }
 
@@ -32,8 +43,9 @@ export const UserForm = () => {
         event.preventDefault(); // Evita que el formulario se envíe y recargue la página
         // Validación: verifica que todos los campos estén completos
         if (!username || !password || !email) {
+            // Muestra un mensaje de alerta si algun campo esta vacio
             alert('Debe completar los campos del formulario!');
-            return; // Detiene la ejecución si algún campo está vacío
+            return; // Detiene la ejecución
         }
         console.log(userForm); // Imprime en consola los datos del formulario
 
@@ -44,13 +56,17 @@ export const UserForm = () => {
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form
+            // Manejador de evento para el envio del formulario
+            onSubmit={onSubmit}>
             {/* Campo de entrada para el nombre de usuario */}
             <input
                 className="form-control my-3 w-75"
                 placeholder="Username"
                 name="username"
+                // Valor del campo vinculado al estado
                 value={username}
+                // Manejador de cambio para actualizar el estado
                 onChange={onInputChange}
             />
             {/* Campo de entrada para la contraseña */}

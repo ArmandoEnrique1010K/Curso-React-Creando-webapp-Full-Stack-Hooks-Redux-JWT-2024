@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { UserRow } from "./UserRow";
 
-// Componente que muestra la lista de usuarios en una tabla
+// Componente que muestra la lista de usuarios en una tabla, la prop users contiene un arreglo vacio como un valor por defecto
 export const UsersList = ({ users = [] }) => {
 
     return (
@@ -31,3 +32,7 @@ export const UsersList = ({ users = [] }) => {
         </table>
     );
 };
+
+UsersList.propTypes = {
+    users: PropTypes.array.isRequired,
+}

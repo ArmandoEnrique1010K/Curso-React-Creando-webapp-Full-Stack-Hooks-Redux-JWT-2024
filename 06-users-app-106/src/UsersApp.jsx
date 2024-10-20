@@ -25,9 +25,12 @@ export const UsersApp = () => {
                 </div>
                 {/* Columna que contiene la lista de usuarios */}
                 <div className="col">
+                    {/* Pasa los usuarios iniciales en la prop users */}
                     <UsersList users={initialUsers} />
                 </div>
             </div>
         </div>
     );
 }
+
+// Por el momento, la aplicación web imprime los datos introducidos en el formulario 
