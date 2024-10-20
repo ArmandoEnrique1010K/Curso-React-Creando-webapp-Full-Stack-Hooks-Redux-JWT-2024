@@ -1,16 +1,17 @@
 // Importamos el hook useNavigate desde react-router-dom para manejar la navegación
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 export const ProductCardView = ({ handler, id, name, description, price }) => {
 
-    // Inicializamos el hook useNavigate para poder navegar entre rutas
+    // Inicializamos el hook useNavigate para poder redireccionar entre rutas
     const navigate = useNavigate();
 
     // Función para manejar la adición de un producto al carrito
     const onAddProduct = (product) => {
         console.log(product); // Imprimimos el producto en la consola para verificar
         handler(product); // Llamamos al manejador para agregar el producto al carrito
-        navigate('/cart'); // Navegamos a la ruta del carrito después de agregar el producto
+        navigate('/cart'); // Redirecciona a la ruta del carrito después de agregar el producto
     }
 
     return (
@@ -27,4 +28,13 @@ export const ProductCardView = ({ handler, id, name, description, price }) => {
             </div>
         </>
     )
+}
+
+// Define propTypes para cada propiedad o prop que se pasa a este componente
+ProductCardView.propTypes = {
+    handler: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
 }

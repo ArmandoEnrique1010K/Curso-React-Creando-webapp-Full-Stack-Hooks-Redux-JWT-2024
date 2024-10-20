@@ -11,6 +11,7 @@ import { CartApp } from './CartApp';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* Instalar react-router-dom con el comando npm install react-router-dom */}
+    {/* Se envuelve el componente principal con <BrowserRouter> para habilitar el enrutado de la aplicación con React Router */}
     <BrowserRouter>
       {/* Incluimos el componente CartApp que representa la aplicación de carrito de compras */}
       <CartApp />

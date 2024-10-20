@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // Importamos la función calculateTotal desde el servicio de productos
 import { calculateTotal } from "../services/productService";
+import PropTypes from "prop-types";
 
 export const CartView = ({ handlerDelete, items }) => {
     // Estado para almacenar el total del carrito
     const [total, setTotal] = useState(0);
-    // Inicializamos el hook useNavigate para manejar la navegación
+
+    // Inicializamos el hook useNavigate para manejar la navegación mediante la redirección
     const navigate = useNavigate();
 
     // useEffect que se ejecuta cada vez que cambian los elementos del carrito
@@ -24,7 +26,8 @@ export const CartView = ({ handlerDelete, items }) => {
 
     // Función para navegar de vuelta al catálogo de productos
     const onCatalog = () => {
-        navigate('/catalog'); // Navegamos a la ruta del catálogo
+        // Redireccionamos a la ruta del catálogo
+        navigate('/catalog');
     }
 
     return (
@@ -83,4 +86,10 @@ export const CartView = ({ handlerDelete, items }) => {
             >Seguir comprando</button>
         </>
     )
+}
+
+// Define propTypes para cada propiedad o prop que se pasa a este componente
+CartView.propTypes = {
+    items: PropTypes.array.isRequired,
+    handlerDelete: PropTypes.func.isRequired
 }
