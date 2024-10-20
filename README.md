@@ -4,6 +4,26 @@ Este repositorio contiene los proyectos con comentarios explicativos que se desa
 
 Algunos de estos proyectos pueden ser complejos, es por ello que se han divivido en fases de desarrollo, el cual lleva la siguiente sintaxis para el nombre: "(numero)-(nombre)-(hasta el video)".
 
+## Crear un proyecto con vite
+
+Para realizar esto, introduce en una terminal los siguientes comandos
+
+```cmd
+cd <<Ruta_de_la_carpeta_contenedora>>
+npm create vite@latest
+<<Nombre_del_proyecto>>
+React
+JavaScript
+cd <<Nombre_del_proyecto>>
+npm install
+```
+
+Reemplaza `<<Ruta_de_la_carpeta_contenedora>>` por la ruta de la carpeta que contiene la barra de direcciones del explorador de Windows y `<<Nombre_del_proyecto>>` por el nombre que llevará la carpeta del proyecto.
+
+Opcionalmente puedes introducir el comando `ls` para verificar si en la carpeta del proyecto se encuentra el archivo `package.json`, este contiene la lista de dependencias que se van a instalar.
+
+Por defecto, al crear un nuevo proyecto, se genera los archivos `index.html`, `app.css`, `app.jsx`, `index.css`, `main.jsx`, y la carpeta `assets`.
+
 ## Introducción a  JavaScript
 
 `01-intro-js`
@@ -14,20 +34,21 @@ Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamen
 
 - Operador Spread en objetos y arreglos, operador Optional Chaining y operador Ternario para las condiciones.
 
-- Métodos principales en arreglos: map, find, filter, includes y some.
+- Métodos para manipular arreglos: forEach, map, find, filter, includes y some.
 
-- Importar y exportar módulos y exportación por defecto.
+- Como importar y exportar módulos y como aplicar la exportación por defecto.
 
 - Promesas y funciones asincronas con async y await.
 
 - Función global fetch para obtener datos de una API externa.
 
-- Manipulación del DOM (Document Object Model).
+- Introducción a la manipulación del DOM (Document Object Model).
 
-|                 | Archivos                                                                                          |
-| --------------- |:-------------------------------------------------------------------------------------------------:|
-| Creados (16)    | main.js, invoices.js, 01-variables-const.js, 02-function.js, 03-objetos.js, ... , 15-fetch-api.js |
-| Modificados (2) | index.html                                                                                        |
+|                    | Archivos                                                                                          |
+| ------------------ |:-------------------------------------------------------------------------------------------------:|
+| 🆕 Creados (16)    | main.js, invoices.js, 01-variables-const.js, 02-function.js, 03-objetos.js, ... , 15-fetch-api.js |
+| 🔃 Modificados (2) | index.html                                                                                        |
+| 🗑️ Eliminados (0) |                                                                                                   |
 
 ## Introducción a React
 
