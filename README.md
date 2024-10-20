@@ -26,7 +26,7 @@ Por defecto, al crear un nuevo proyecto, se genera los archivos `index.html`, `a
 
 ## Introducción a  JavaScript
 
-`01-intro-js`
+**Proyecto**: `01-intro-js`
 
 Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamentales y tecnicas que se aplicaran en el desarrollo web con React:
 
@@ -46,38 +46,47 @@ Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamen
 
 - Introducción a la manipulación del DOM (Document Object Model).
 
-|                    | Archivos y carpetas*                                                                                                                                                                                                                                                                                                                                                                                               |
-| ------------------ |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ➕ Creados (17)     | `main.js`, `invoices.js`, `01-variables-constantes.js`, `02-funcion.js`, `03-objetos.js`, `04-objetos-spread-clonar.js`, `05-optional-chaning.js`, `06-operador-ternario.js`, `07-arreglos.js`, `08-arregles-spread.js`, `09-objetos-destructuring.js`, `10-objetos-destructuring2.js`, `11-arreglos-destructuring.js`, `12-arreglos-funciones.js`, `13-importar-exportar.js`, `14-promesas.js`, `15-fetch-api.js` |
-| 🔃 Modificados (1) | `index.html`                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 🗑️ Eliminados (5) | `assets`*, `index.css`, `app.css`, `main.jsx`, `app.jsx`,                                                                                                                                                                                                                                                                                                                                                          |
+|                        | Archivos y carpetas*                                                                                                                                                                                                                                                                                                                                                                                                |
+| ---------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| **➕ Creados (17)**     | `main.js`, `01-variables-constantes.js`, `02-funcion.js`, `03-objetos.js`, `04-objetos-spread-clonar.js`, `05-optional-chaning.js`, `06-operador-ternario.js`, `07-arreglos.js`, `08-arregles-spread.js`, `09-objetos-destructuring.js`, `10-objetos-destructuring2.js`, `11-arreglos-destructuring.js`, `12-arreglos-funciones.js`, `invoices.js`, `13-importar-exportar.js`, `14-promesas.js` y `15-fetch-api.js` |
+| **🔃 Modificados (1)** | `index.html`                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **🗑️ Eliminados (5)** | `assets`*, `index.css`, `app.css`, `main.jsx`, `app.jsx`                                                                                                                                                                                                                                                                                                                                                            |
 
 ## Introducción a React
 
-`02-intro-react`
+**Proyecto**: `02-intro-react`
 
-- Creación de elementos HTML utilizando React.createElement y de forma directa en un archivo jsx.
+Aplica los conceptos fundamentales de React como el uso de componentes propios y la estructura de componentes de una aplicación web de prueba con React:
 
-- Renderizar un componente.
+- Demostración de la creación de elementos HTML por detras de React utilizando `React.createElement` y de forma directa en un archivo `jsx`.
 
-- El uso de las propiedades (props) que se pasan entre componentes.
+- Instanciar un componente funcional y renderizarlo en el navegador.
 
-- Definición del tipo de dato de las props utilizando la libreria prop-types.
+- Pasar propiedades (props) entre un componente padre a un componente hijo.
 
-- Definición del valor por defecto de las props utilizando default-props.
+- Definición del tipo de dato asignado a una prop mediante el uso de la libreria `prop-types`.
+
+- Asignación del valor por defecto de una prop utilizando default props. 
 
 - Aplicación de la técnica de composición de componentes.
 
-|                 | Archivos                                                              |
-| --------------- |:---------------------------------------------------------------------:|
-| Creados (5)     | 02-main.jsx, HelloWorldApp.jsx, Title.jsx, UserDetails.jsx y Book.jsx |
-| Modificados (2) | index.html, main.jsx                                                  |
+|                        | Archivos y carpetas*                                                            |
+| ---------------------- |:-------------------------------------------------------------------------------:|
+| ➕ **Creados (5)**      | `02-main.jsx`, `HelloWorldApp.jsx`, `Title.jsx`, `UserDetails.jsx` y `Book.jsx` |
+| 🔃 **Modificados (2)** | `index.html` y `main.jsx`                                                       |
+| 🗑️ **Eliminados (4)** | `assets`*, `index.css`, `app.css` y `app.jsx`                                   |
 
-Instalar desde la consola: prop-types
+**Comandos para instalar librerias externas**:
+
+```powershell
+npm install prop-types
+```
 
 ## El estado de React
 
-`03-counter-app`
+**Proyecto**: `03-counter-app`
+
+Una variación de la aplicación de prueba que se genera por defecto en React, explica como se implementa el hook useState y como el valor de una variable de estado se actualiza con un clic en la aplicación web.
 
 - Definición de una variable de estado y su función para modificarla utilizando useState.
 
@@ -85,20 +94,33 @@ Instalar desde la consola: prop-types
 
 - Actualización de la variable de estado en el navegador.
 
-|                 | Archivos             |
-| --------------- |:--------------------:|
-| Creados (5)     | CounterApp.jsx       |
-| Modificados (2) | index.html, main.jsx |
+|                    | Archivos                                      |
+| ------------------ |:---------------------------------------------:|
+| ➕ Creados (1)      | `CounterApp.jsx`                              |
+| 🔃 Modificados (2) | `index.html` y `main.jsx`                     |
+| 🗑️ Eliminados (4) | `assets`*, `index.css`, `app.css` y `app.jsx` |
 
-Instalar desde la consola: prop-types
+**Comandos para instalar librerias externas**:
 
-Una variación de la aplicación de prueba que se genera por defecto en React, explica como se implementa el hook useState y como el valor de una variable de estado se actualiza con un clic en la aplicación web.
+```powershell
+npm install prop-types
+```
 
 ## Aplicación factura
 
 `04-invoice-app-55`
 
 Separa los componentes de la aplicación: data, service y components, además utiliza datos estaticos para maquetarlos en la aplicación web y se aplican estilos con Bootstrap.
+
+
+
+|                    | Archivos             |
+| ------------------ |:--------------------:|
+| ➕ Creados (17)     | CounterApp.jsx       |
+| 🔃 Modificados (1) | index.html, main.jsx |
+| 🗑️ Eliminados (5) |                      |
+
+
 
 ---
 
@@ -116,6 +138,14 @@ Archivos creados: ClientView.jsx, CompanyView.jsx, InvoiceView.jsx, ListItemsVie
 Archivos modificados: getInvoice.js, InvoiceApp.jsx
 
 Archivos eliminados:
+
+|                    | Archivos             |
+| ------------------ |:--------------------:|
+| ➕ Creados (17)     | CounterApp.jsx       |
+| 🔃 Modificados (1) | index.html, main.jsx |
+| 🗑️ Eliminados (5) |                      |
+
+
 
 `04-invoice-app-67`
 

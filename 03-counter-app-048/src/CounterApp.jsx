@@ -15,8 +15,7 @@ export const CounterApp = ({ value }) => {
     }
     */
 
-    // Usamos el hook useState para crear una variable de estado llamada 'counter'
-    // y una función para actualizarla llamada 'setCounter', inicializándola con el valor recibido como prop.
+    // Usamos el hook useState para crear una variable de estado llamada 'counter' y una función para actualizarla llamada 'setCounter', inicializándola con el valor recibido como prop.
 
     // Si no se define el valor inicial que tendra counter, el navegador mostrara NaN luego de hacer clic en el botón
     const [counter, setCounter] = useState(value);
