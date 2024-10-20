@@ -34,7 +34,9 @@ Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamen
 
 - Operador Spread en objetos y arreglos, operador Optional Chaining y operador Ternario para las condiciones.
 
-- Métodos para manipular arreglos: forEach, map, find, filter, includes y some.
+- Desestructuración de objetos y arreglos, desestructuración de objetos en una función.
+
+- Métodos para manipular arreglos: concat, forEach, map, find, filter, includes y some.
 
 - Como importar y exportar módulos y como aplicar la exportación por defecto.
 
@@ -44,11 +46,11 @@ Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamen
 
 - Introducción a la manipulación del DOM (Document Object Model).
 
-|                    | Archivos                                                                                          |
-| ------------------ |:-------------------------------------------------------------------------------------------------:|
-| 🆕 Creados (16)    | main.js, invoices.js, 01-variables-const.js, 02-function.js, 03-objetos.js, ... , 15-fetch-api.js |
-| 🔃 Modificados (2) | index.html                                                                                        |
-| 🗑️ Eliminados (0) |                                                                                                   |
+|                    | Archivos y carpetas*                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------ |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ➕ Creados (17)     | `main.js`, `invoices.js`, `01-variables-constantes.js`, `02-funcion.js`, `03-objetos.js`, `04-objetos-spread-clonar.js`, `05-optional-chaning.js`, `06-operador-ternario.js`, `07-arreglos.js`, `08-arregles-spread.js`, `09-objetos-destructuring.js`, `10-objetos-destructuring2.js`, `11-arreglos-destructuring.js`, `12-arreglos-funciones.js`, `13-importar-exportar.js`, `14-promesas.js`, `15-fetch-api.js` |
+| 🔃 Modificados (1) | `index.html`                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 🗑️ Eliminados (5) | `assets`*, `index.css`, `app.css`, `main.jsx`, `app.jsx`,                                                                                                                                                                                                                                                                                                                                                          |
 
 ## Introducción a React
 
