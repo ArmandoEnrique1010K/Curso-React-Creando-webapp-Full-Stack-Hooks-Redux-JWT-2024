@@ -35,24 +35,6 @@ export const useUsers = () => {
 
   // Función para agregar o actualizar un usuario
   const handlerAddUser = (user) => {
-    // Primera forma
-    // Variable para determinar el tipo de acción
-    // let type;
-
-    // Si el usuario no tiene un ID, se añade como nuevo; si tiene ID, se actualiza
-    // if (user.id === 0) {
-    //   type = "addUser";
-    // } else {
-    //   type = "updateUser";
-    // }
-
-    // Dispara la acción correspondiente con los datos del usuario
-    // dispatch({
-    //   type,
-    //   payload: user, // Se envía el usuario como payload de la acción
-    // });
-
-    // Segunda forma
     // Determina si se va a agregar o actualizar un usuario dependiendo de si el usuario tiene ID
     dispatch({
       type: user.id === 0 ? "addUser" : "updateUser",
