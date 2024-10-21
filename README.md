@@ -4,6 +4,8 @@ Este repositorio contiene los proyectos con comentarios explicativos que se desa
 
 Algunos de estos proyectos pueden ser complejos, es por ello que se han divivido en fases de desarrollo, el cual lleva la siguiente sintaxis para el nombre: "(numero)-(nombre)-(hasta el video)".
 
+---
+
 ## Crear un proyecto con vite
 
 Para realizar esto, introduce en una terminal los siguientes comandos
@@ -24,11 +26,13 @@ Opcionalmente puedes introducir el comando `ls` para verificar si en la carpeta 
 
 Por defecto, al crear un nuevo proyecto, se genera los archivos `index.html`, `app.css`, `app.jsx`, `index.css`, `main.jsx`, y la carpeta `assets`.
 
-## Introducción a  JavaScript
+---
+
+## Introducción a  JavaScript ⭐
+
+Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamentales y tecnicas que se aplicaran en el desarrollo web con React.
 
 **Proyecto**: `01-intro-js`
-
-Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamentales y tecnicas que se aplicaran en el desarrollo web con React:
 
 - Variables, constantes, funciones de flecha, objetos que incluyen métodos propios y arreglos.
 
@@ -46,17 +50,19 @@ Aplica la sintaxis actualizada de JavaScript ES6, incluye los conceptos fundamen
 
 - Introducción a la manipulación del DOM (Document Object Model).
 
-|                        | Archivos y carpetas*                                                                                                                                                                                                                                                                                                                                                                                                |
+|                        | Archivos                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ---------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | **➕ Creados (17)**     | `main.js`, `01-variables-constantes.js`, `02-funcion.js`, `03-objetos.js`, `04-objetos-spread-clonar.js`, `05-optional-chaning.js`, `06-operador-ternario.js`, `07-arreglos.js`, `08-arregles-spread.js`, `09-objetos-destructuring.js`, `10-objetos-destructuring2.js`, `11-arreglos-destructuring.js`, `12-arreglos-funciones.js`, `invoices.js`, `13-importar-exportar.js`, `14-promesas.js` y `15-fetch-api.js` |
 | **🔃 Modificados (1)** | `index.html`                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **🗑️ Eliminados (5)** | `assets`*, `index.css`, `app.css`, `main.jsx`, `app.jsx`                                                                                                                                                                                                                                                                                                                                                            |
+| **🗑️ Eliminados (4)** | `index.css`, `app.css`, `main.jsx`, `app.jsx`                                                                                                                                                                                                                                                                                                                                                                       |
 
-## Introducción a React
+---
+
+## Introducción a React ⭐
+
+Aplica los conceptos fundamentales de React como el uso de componentes propios y la estructura de componentes de una aplicación web de prueba con React.
 
 **Proyecto**: `02-intro-react`
-
-Aplica los conceptos fundamentales de React como el uso de componentes propios y la estructura de componentes de una aplicación web de prueba con React:
 
 - Demostración de la creación de elementos HTML por detras de React utilizando `React.createElement` y de forma directa en un archivo `jsx`.
 
@@ -70,23 +76,27 @@ Aplica los conceptos fundamentales de React como el uso de componentes propios y
 
 - Aplicación de la técnica de composición de componentes.
 
-|                        | Archivos y carpetas*                                                            |
+- Lista de comandos para instalar librerias externas: `npm install prop-types`
+
+|                        | Archivos                                                                        |
 | ---------------------- |:-------------------------------------------------------------------------------:|
 | ➕ **Creados (5)**      | `02-main.jsx`, `HelloWorldApp.jsx`, `Title.jsx`, `UserDetails.jsx` y `Book.jsx` |
 | 🔃 **Modificados (2)** | `index.html` y `main.jsx`                                                       |
-| 🗑️ **Eliminados (4)** | `assets`*, `index.css`, `app.css` y `app.jsx`                                   |
+| 🗑️ **Eliminados (3)** | `index.css`, `app.css` y `app.jsx`                                              |
 
-**Comandos para instalar librerias externas**:
+Lista de comandos para instalar librerias externas:
 
 ```powershell
 npm install prop-types
 ```
 
-## Aplicación contador
+---
 
-**Proyecto**: `03-counter-app`
+## Aplicación contador ⭐
 
 Una variación de la aplicación de prueba que se genera por defecto en React, explica como se implementa el hook useState y como el valor de una variable de estado se actualiza con un clic en la aplicación web.
+
+**Proyecto**: `03-counter-app`
 
 - Definición de una variable de estado y su función para modificarla utilizando useState.
 
@@ -94,23 +104,29 @@ Una variación de la aplicación de prueba que se genera por defecto en React, e
 
 - Actualización de la variable de estado en el navegador.
 
-|                        | Archivos                                      |
-| ---------------------- |:---------------------------------------------:|
-| **➕ Creados (1)**      | `CounterApp.jsx`                              |
-| **🔃 Modificados (2)** | `index.html` y `main.jsx`                     |
-| **🗑️ Eliminados (4)** | `assets`*, `index.css`, `app.css` y `app.jsx` |
+|                        | Archivos                           |
+| ---------------------- |:----------------------------------:|
+| **➕ Creados (1)**      | `CounterApp.jsx`                   |
+| **🔃 Modificados (2)** | `index.html` y `main.jsx`          |
+| **🗑️ Eliminados (3)** | `index.css`, `app.css` y `app.jsx` |
 
-**Comandos para instalar librerias externas**:
+Lista de comandos para instalar librerias externas:
 
 ```powershell
 npm install prop-types
 ```
 
-## Aplicación factura
+---
 
-**Proyecto 1**: `04-invoice-app-55`
+## Aplicación factura ⭐⭐
 
-Proyecto de una aplicación de tipo factura, en el que se aplican todos los conceptos estudiados hasta el momento.
+Proyecto de una aplicación de tipo factura, en el que se aplican todos los conceptos estudiados hasta el momento, además de otros nuevos como la maquetación de datos estaticos, aplicación de estilos con Bootstrap, método reduce para arreglos, manejo de un formulario para agregar un producto, variables de estado para el formulario, el hook useEffect, etc.
+
+Este es un proyecto que consta de 5 fases:
+
+### Fase 1
+
+**Proyecto**: `04-invoice-app-55`
 
 - Estructura de componentes de una aplicación web con React (data, service y components).
 
@@ -124,89 +140,138 @@ Proyecto de una aplicación de tipo factura, en el que se aplican todos los conc
 | ---------------------- |:------------------------------------------------:|
 | **➕ Creados (3)**      | `invoice.js`, `getInvoice.js` e `InvoiceApp.jsx` |
 | **🔃 Modificados (2)** | `index.html` y `main.jsx`                        |
-| **🗑️ Eliminados (4)** | `assets`*, `index.css`, `app.css` y `app.jsx`    |
+| **🗑️ Eliminados (3)** | `index.css`, `app.css` y `app.jsx`               |
 
-**Proyecto 2**: `04-invoice-app-61`
+### Fase 2
 
-Aplica un nuevo servicio para calcular el total utilizando los datos, la composición de componentes para dividir el componente principal en subcomponentes y prop-types para los tipos de props que se pasan entre componentes.
+**Proyecto**: `04-invoice-app-61`
 
-| Archivos    |                                                                                                       |
-|:-----------:|:-----------------------------------------------------------------------------------------------------:|
-| Creados     | ClientView.jsx, CompanyView.jsx, InvoiceView.jsx, ListItemsView.jsx, RowItemView.jsx y TotalView.jsx. |
-| Modificados | getInvoice.js, InvoiceApp.jsx                                                                         |
+- Definición de un servicio para calcular el total utilizando los datos estáticos con el método reduce.
 
-Archivos creados: ClientView.jsx, CompanyView.jsx, InvoiceView.jsx, ListItemsView.jsx, RowItemView.jsx, TotalView.jsx.
+- Manipulación de los elementos de tipo objeto que contiene un arreglo con el método map, que representa los items de la factura.
 
-Archivos modificados: getInvoice.js, InvoiceApp.jsx
+- Aplicación de la composición de componentes para dividir el componente principal en subcomponentes.
 
-Archivos eliminados:
+- Definición de un componente que se renderizara por cada producto de la factura, además se hace uso del atributo key para asignar un id al producto.
 
-|                        | Archivos             |
-| ---------------------- |:--------------------:|
-| **➕ Creados (17)**     | CounterApp.jsx       |
-| **🔃 Modificados (1)** | index.html, main.jsx |
-| **🗑️ Eliminados (5)** |                      |
+- La implementación de prop-types para definir el tipo de dato.
+
+|                        | Archivos                                                                                                          |
+|:----------------------:|:-----------------------------------------------------------------------------------------------------------------:|
+| **➕ Creados (3)**      | `ClientView.jsx`, `CompanyView.jsx`, `InvoiceView.jsx`, `ListItemsView.jsx`, `RowItemView.jsx` y `TotalView.jsx`. |
+| **🔃 Modificados (2)** | `getInvoice.js` y `InvoiceApp.jsx`                                                                                |
+
+Lista de comandos para instalar librerias externas:
+
+```powershell
+npm install prop-types
+```
+
+### Fase 3
+
+**Proyecto**: `04-invoice-app-67`
+
+- Definición de un formulario en el componente principal para agregar un nuevo producto.
+
+- Definición de variables de estados para cada campo del formulario (producto, precio y cantidad), un estado para la lista de items y un contador.
+
+- Definición de funciones para manejar los eventos `onChange` y `onSubmit` en el formulario.
+
+- Validaciones para los valores introducidos en los campos del formulario.
+
+- Manejo de la lógica para agregar un nuevo item a la factura y mostrarlo en la aplicación web.
+
+|                        | Archivos         |
+|:----------------------:|:----------------:|
+| **🔃 Modificados (1)** | `InvoiceApp.jsx` |
+
+### Fase 4
+
+**Proyecto**: `04-invoice-app-71`
+
+- Se separa en una nueva función la lógica para calcular el total de los items de la factura
+
+- Se utiliza un solo estado para agrupar los 3 estados de los campos del formulario, además se hace uso de una variable computada para simplificar el código.
+
+- Definición de objeto inicial para asignarle al estado de la factura.
+
+- El uso del hook useEffect para cargar los datos iniciales de la factura cuando se renderiza en el navegador el componente principal y para recalcular el total de los items de la factura.
+
+|                        | Archivos                           |
+|:----------------------:|:----------------------------------:|
+| **🔃 Modificados (2)** | `getInvoice.js` e `InvoiceApp.jsx` |
+
+### Fase 5
+
+**Proyecto**: `04-invoice-app-75`
+
+- Se traslada todo el formulario en un nuevo componente, incluyendo las funciones asociadas en el formulario.
+
+- Se envia una función de un componente hijo a un componente padre para agregar un producto a la factura, las funciones asociadas a la lista de items se queda en el componente principal.
+
+- Añade un botón para mostrar u ocultar el formulario en la aplicación web.
+
+- Añade un botón para eliminar un producto de la factura por su id.
+
+- Se añade las prop-types en todos los componentes que hace falta.
+
+| Archivos               |                                                                                |
+|:----------------------:|:------------------------------------------------------------------------------:|
+| **➕ Creados (1)**      | `FormItemsView.jsx`                                                            |
+| **🔃 Modificados (4)** | `InvoiceApp.jsx`, `ListItemsView.jsx`, `RowItemView.jsx` y `TotalItemView.jsx` |
+
+---
+
+## Aplicación carro de compras⭐⭐
+
+Proyecto de una aplicación de tipo carro de compras, se aplica la lógica para añadir un producto del catalogo por su id al carrito. Por otro lado se aplican otros conceptos de React como la función reducer y el hook useReducer, la creación de un hook personalizado en el que se almacena toda la parte JavaScript de un componente y la definición de las rutas con React Router.
+
+La parte del frontend de este proyecto consta de 5 fases:
+
+### Fase 1
+
+**Proyecto**: `05-cart-app-82`
+
+- Definición de los datos estaticos para el catalogo de producto.
+
+- Combinación de los hooks useState y useEffect para obtener los datos iniciales.
+
+- Maquetación de los productos en la vista del usuario.
+
+- Implementación de Bootstrap para definir los estilos.
+
+|                        | Archivos                                          |
+| ---------------------- |:-------------------------------------------------:|
+| **➕ Creados(3)**       | `products.js`, `productService.js`, `CartApp.jsx` |
+| **🔃 Modificados (2)** | `index.html`, `main.jsx`                          |
+| **🗑️ Eliminados (3)** | `index.css`, `app.css` y `app.jsx`                |
+
+### Fase 2
+
+**Proyecto**: `05-cart-app-86`
+
+- Aplica la composición de componentes para dividir en subcomponentes el componente principal.
+
+- Añade un estado para almacenar los productos que se encuentran dentro del carrito.
+
+- Añade un botón en cada producto para agregarlo al carrito.
+
+- Se implementa la logica para agregar el producto al carrito, pero aun no se agrega la logica para actualizar la cantidad.
+
+- 
 
 
-
-
-
-
-
-
-
-`04-invoice-app-67`
-
-Se modifica el componente principal para incluir un formulario en la aplicación web para agregar un nuevo producto, implica el uso de useState, eventos que llaman funciones, validaciones de campos de formularios y actualizaciones de estados.
-
-| Archivos    |                |
-|:-----------:|:--------------:|
-| Modificados | InvoiceApp.jsx |
-
-Archivos creados: 
-
-Archivos modificados: InvoiceApp.jsx,
-
-Archivos eliminados:
-
-`04-invoice-app-71`
-
-Introduce el hook useEffect para ejecutar una función cuando se renderiza el componente principal y cuando cambia el valor de los estados, se utiliza un solo useState para todos los campos del formulario, por otro lado se modifica el servicio para calcular el total para que funcione con el hook useEffect.
-
-| Archivos    |                               |
-|:-----------:|:-----------------------------:|
-| Modificados | getInvoice.js, InvoiceApp.jsx |
-
-Archivos creados:
-
-Archivos modificados: InvoiceApp.jsx, getInvoice.js, 
-
-Archivos eliminados:
-
-`04-invoice-app-75`
-
-Separa el formulario en un nuevo componente, eso incluye las funciones asociadas en el formulario, añade un boton para mostrar u ocultar el formulario y un boton para eliminar un producto de la factura. además se agregan prop-types para funciones.
-
-| Archivos    |                                                                        |
-|:-----------:|:----------------------------------------------------------------------:|
-| Creados     | FormItemsView.jsx                                                      |
-| Modificados | InvoiceApp.jsx, ListItemsView.jsx, RowItemView.jsx y TotalItemView.jsx |
-
-Archivos creados: FormItemsView.jsx,
-
-Archivos modificados: InvoiceApp.jsx, ListItemsView.jsx, RowItemView.jsx, TotalItemView.jsx
-
-Archivos eliminados:
-
-## Aplicación carro de compras
-
-`05-cart-app-82`
-
-Comienza definiendo los datos iniciales del catalogo de producto y luego los maqueta en la aplicación web, además utiliza estilos de Bootstrap y se utiliza un useEffect para obtener los datos.
-
-`05-cart-app-86`
 
 Divide el componente principal de la aplicación en subcomponentes, además añade un  estado para el carro de compras y un evento onclick en cada botón del producto para agregarlo al carro, de tal manera que actualice su estado.
+
+|                        | Archivos                                                  |
+| ---------------------- |:---------------------------------------------------------:|
+| **➕ Creados(3)**       | `CartView.jsx`, `CatalogView.jsx` y `ProductCardView.jsx` |
+| **🔃 Modificados (2)** | `CartApp.jsx`                                             |
+
+
+
+
 
 Archivos creados: CartView, CatalogView, ProductCardView
 
@@ -236,7 +301,17 @@ Archivos modificados: main.jsx, CartApp, CartView, productCardView,
 
 Archivos creados: Navbar, CartRoutes
 
-## Aplicación usuarios y login
+
+
+|                        | Archivos             |
+| ---------------------- |:--------------------:|
+| **➕ Creados (17)**     | CounterApp.jsx       |
+| **🔃 Modificados (1)** | index.html, main.jsx |
+| **🗑️ Eliminados (5)** |                      |
+
+
+
+## Aplicación usuarios y login ⭐⭐⭐
 
 106
 
