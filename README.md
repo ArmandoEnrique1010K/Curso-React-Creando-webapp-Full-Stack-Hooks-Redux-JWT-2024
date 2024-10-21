@@ -258,58 +258,87 @@ La parte del frontend de este proyecto consta de 5 fases:
 
 - Se implementa la logica para agregar el producto al carrito, pero aun no se agrega la logica para actualizar la cantidad.
 
-- 
-
-
-
-Divide el componente principal de la aplicación en subcomponentes, además añade un  estado para el carro de compras y un evento onclick en cada botón del producto para agregarlo al carro, de tal manera que actualice su estado.
+- Se añade prop-types para todos los componentes que reciben props.
 
 |                        | Archivos                                                  |
 | ---------------------- |:---------------------------------------------------------:|
 | **➕ Creados(3)**       | `CartView.jsx`, `CatalogView.jsx` y `ProductCardView.jsx` |
 | **🔃 Modificados (2)** | `CartApp.jsx`                                             |
 
+Lista de comandos para instalar librerias externas:
 
+```powershell
+npm install prop-types
+```
 
+### Fase 3
 
+**Proyecto**: `05-cart-app-90`
 
-Archivos creados: CartView, CatalogView, ProductCardView
+- Se implementa el servicio para calcular el precio total de los items en el carrito.
 
-Archivos modificados: CartApp
+- Se utiliza un operador ternario para mostrar el carrito solamente si hay al menos un producto en el carrito.
 
-`05-cart-app-90`
+- Se mejora la lógica para agregar un producto y se implementa la logica para actualizar la cantidad de un producto al agregar el mismo producto al carrito.
 
-Al agregar un producto 2 veces en el carro de compras, se actualiza la cantidad; tambien se implementa un botón para eliminar un producto y un servicio para actualizar el precio total del carro de compras. Por otro lado, los datos de los productos del carrito se guardan en un sessionStorage.
+- Añade un botón para eliminar un producto del carrito.
 
-Archivos modificados: productService.js, CartApp, CartView,
+- Los datos de los productos del carrito se guardan en un sessionStorage para que no se pierdan al recargar la pagina.
 
-`05-cart-app-95`
+|                        | Archivos                                           |
+| ---------------------- |:--------------------------------------------------:|
+| **🔃 Modificados (3)** | `productService.js`, `CartApp.jsx`, `CartView.jsx` |
+
+*Un error que falta solucionar es cuando se elimina todos los productos del carrito, al recargar la pagina, se añade automaticamente el ultimo producto que se encontraba en el carrito
+
+### Fase 4
+
+**Proyecto**: `05-cart-app-95`
+
+- Se introduce la sintaxis de la función reducer
+
+- El hook useReducer para manejar las actualizaciones de estado del carrito de compras: agregar producto, actualizar cantidad y eliminar producto.
+
+- Toda la logica que habia sido definida en el componente principal, se traslado a un hook personalizado llamado `useItemsCart`.
 
 Se introduce el hook useReducer y las función reducer, para manejar las actualizaciones de estado: agregar producto, actualizar cantidad y eliminar producto. 
 
 Tambien se traslada toda la logica de JavaScript del componente principal en un hook personalizado.
 
-Archivos modificados: CartApp.jsx,
+|                        | Archivos                                              |
+| ---------------------- |:-----------------------------------------------------:|
+| **➕ Creados(3)**       | `itemsActions.js`, `itemsReducer.js` y `useItemsCart` |
+| **🔃 Modificados (1)** | `CartApp.jsx`                                         |
 
-Archivos agregados: itemsActions, itemsReducer, useItemsCart, CartView
+### Fase 5
 
-`05-cart-app-100`
+**Proyecto**: `05-cart-app-100`
+
+- Se introduce las definiciones de rutas con React Router.
+
+- El uso del hook useNavigate para manejar la redirección mediante un botón.
+
+- Implementación de un nuevo componente para la barra de navegación.
+
+- Toda la logica que contiene las rutas se define en un componente llamado CartRoutes.jsx.
+
+- 
 
 Se introduce React Router para el manejo de rutas en la aplicación web,  el hook useNavigate para las navegación mediante un botón, se implementa un componente para la barra de navegación y se divide la logica de la definición de rutas en un nuevo componente.
 
-Archivos modificados: main.jsx, CartApp, CartView, productCardView,
+|                        | Archivos                                                         |
+| ---------------------- |:----------------------------------------------------------------:|
+| **➕ Creados (17)**     | `CartRoutes.jsx`, `Navbar.jsx`                                   |
+| **🔃 Modificados (1)** | `main.jsx`, `CartApp.jsx`, `CartView.jsx`, `ProductCardView.jsx` |
 
-Archivos creados: Navbar, CartRoutes
+Lista de comandos para instalar librerias externas:
 
+```powershell
+npm install react-router
+npm install react-router-dom
+```
 
-
-|                        | Archivos             |
-| ---------------------- |:--------------------:|
-| **➕ Creados (17)**     | CounterApp.jsx       |
-| **🔃 Modificados (1)** | index.html, main.jsx |
-| **🗑️ Eliminados (5)** |                      |
-
-
+---
 
 ## Aplicación usuarios y login ⭐⭐⭐
 
@@ -320,6 +349,14 @@ Archivos creados: Navbar, CartRoutes
 - Se introduce unos datos de prueba
 
 - El estado formulario se maneja de forma interna, para los campos y el boton para subir el formulario nada más imprime los datos del formulario en la consola.
+
+|                        | Archivos             |
+| ---------------------- |:--------------------:|
+| **➕ Creados (17)**     | CounterApp.jsx       |
+| **🔃 Modificados (1)** | index.html, main.jsx |
+| **🗑️ Eliminados (5)** |                      |
+
+
 
 112
 
@@ -383,7 +420,7 @@ Archivos creados: Navbar, CartRoutes
 
 - Archivos modificados: UsersApp, LoginPage, 
 
-## Rutas en la aplicación usuarios
+## Rutas en la aplicación usuarios ⭐⭐
 
 - Se define las rutas para la aplicación usuarios:
 
@@ -399,46 +436,46 @@ Archivos creados: Navbar, CartRoutes
 
 - FALTA COMENTARIOS
 
-## Contexto de React en la aplicación usuarios
+## Contexto de React en la aplicación usuarios ⭐⭐
 
 140
 
 143
 
-## API REST carro de compras
+## API REST carro de compras ⭐
 
 162
 
-## API REST usuarios
+## API REST usuarios ⭐⭐
 
 174
 
-## Comunicación entre frontend y backend carro de compras
+## Comunicación entre frontend y backend carro de compras ⭐
 
 178
 
-## Comunicación entre frontend y backend usuarios
+## Comunicación entre frontend y backend usuarios ⭐⭐
 
 183
 
-## Validaciones en API REST usuarios
+## Validaciones en API REST usuarios ⭐
 
 185
 
-## Integrando validación desde el backend al frontend usuarios
+## Integrando validación desde el backend al frontend usuarios ⭐⭐
 
 191
 
-## Spring Security y JWT en API REST usuarios
+## Spring Security y JWT en API REST usuarios ⭐⭐⭐⭐⭐
 
 -
 
-## Integrando JWT desde el backend al frontend usuarios
+## Integrando JWT desde el backend al frontend usuarios ⭐⭐⭐⭐
 
 -
 
-## Redux en aplicación usuarios
+## Redux en aplicación usuarios⭐⭐
 
 -
 
-## Paginación en aplicación usuarios
+## Paginación en aplicación usuarios⭐⭐⭐
