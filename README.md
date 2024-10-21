@@ -118,7 +118,7 @@ npm install prop-types
 
 ---
 
-## Aplicación factura ⭐⭐
+## Aplicación factura ⭐⭐⭐
 
 Proyecto de una aplicación de tipo factura, en el que se aplican todos los conceptos estudiados hasta el momento, además de otros nuevos como la maquetación de datos estaticos, aplicación de estilos con Bootstrap, método reduce para arreglos, manejo de un formulario para agregar un producto, variables de estado para el formulario, el hook useEffect, etc.
 
@@ -222,7 +222,7 @@ npm install prop-types
 
 ---
 
-## Aplicación carro de compras⭐⭐
+## Aplicación carro de compras⭐⭐⭐
 
 Proyecto de una aplicación de tipo carro de compras, se aplica la lógica para añadir un producto del catalogo por su id al carrito. Por otro lado se aplican otros conceptos de React como la función reducer y el hook useReducer, la creación de un hook personalizado en el que se almacena toda la parte JavaScript de un componente y la definición de las rutas con React Router.
 
@@ -234,7 +234,7 @@ La parte del frontend de este proyecto consta de 5 fases:
 
 - Definición de los datos estaticos para el catalogo de producto.
 
-- Combinación de los hooks useState y useEffect para obtener los datos iniciales.
+- Combinación de los hooks `useState` y `useEffect` para obtener los datos iniciales.
 
 - Maquetación de los productos en la vista del usuario.
 
@@ -289,21 +289,19 @@ npm install prop-types
 | ---------------------- |:--------------------------------------------------:|
 | **🔃 Modificados (3)** | `productService.js`, `CartApp.jsx`, `CartView.jsx` |
 
-*Un error que falta solucionar es cuando se elimina todos los productos del carrito, al recargar la pagina, se añade automaticamente el ultimo producto que se encontraba en el carrito
+*Un error que falta solucionar es cuando se elimina todos los productos del carrito, al recargar la pagina, se añade automaticamente el ultimo producto que se encontraba en el carrito.
 
 ### Fase 4
 
 **Proyecto**: `05-cart-app-95`
 
-- Se introduce la sintaxis de la función reducer
+- Se introduce la sintaxis de la función reducer, consta en definir en un bloque `switch-case` los nombres de las funciones que actualizan el estado de los items en el carrito de compras.
 
-- El hook useReducer para manejar las actualizaciones de estado del carrito de compras: agregar producto, actualizar cantidad y eliminar producto.
+- Implementación del hook `useReducer` para manejar las actualizaciones de estado del carrito de compras: agregar producto, actualizar cantidad y eliminar producto.
 
-- Toda la logica que habia sido definida en el componente principal, se traslado a un hook personalizado llamado `useItemsCart`.
+- Toda la logica que habia sido definida en el componente principal, se traslado a un hook personalizado llamado `useItemsCart` y en el componente principal solamente se llama a ese hook.
 
-Se introduce el hook useReducer y las función reducer, para manejar las actualizaciones de estado: agregar producto, actualizar cantidad y eliminar producto. 
-
-Tambien se traslada toda la logica de JavaScript del componente principal en un hook personalizado.
+- Tambien se mejora la logica para eliminar un producto y que no se muestre en el navegador luego de recargar la pagina.
 
 |                        | Archivos                                              |
 | ---------------------- |:-----------------------------------------------------:|
@@ -314,17 +312,17 @@ Tambien se traslada toda la logica de JavaScript del componente principal en un 
 
 **Proyecto**: `05-cart-app-100`
 
-- Se introduce las definiciones de rutas con React Router.
+- Se introduce las definiciones de rutas con los componentes que trae React Router.
 
-- El uso del hook useNavigate para manejar la redirección mediante un botón.
+- El uso del hook `useNavigate` para manejar la redirección mediante un botón.
 
 - Implementación de un nuevo componente para la barra de navegación.
 
-- Toda la logica que contiene las rutas se define en un componente llamado CartRoutes.jsx.
+- Toda la logica que contiene las rutas se define en un nuevo componente llamado `CartRoutes.jsx`.
 
-- 
+- Cada vez que se agrega un producto del catalogo al carrito de compras, se redirecciona al carrito de compras.
 
-Se introduce React Router para el manejo de rutas en la aplicación web,  el hook useNavigate para las navegación mediante un botón, se implementa un componente para la barra de navegación y se divide la logica de la definición de rutas en un nuevo componente.
+- Se tiene en cuenta que el componente principal se encarga de renderizar la barra de navegación y el componente `CartRoutes` para renderizar el componente que corresponde a cierta ruta.
 
 |                        | Archivos                                                         |
 | ---------------------- |:----------------------------------------------------------------:|
@@ -340,41 +338,60 @@ npm install react-router-dom
 
 ---
 
-## Aplicación usuarios y login ⭐⭐⭐
+## Aplicación usuarios y login ⭐⭐⭐⭐
 
-106
+Este es el gran proyecto de este curso, es una aplicación de tipo login y registro de usuarios, en esta sección se definira la parte front-end de la aplicación web, haciendo uso de todo lo aprendido hasta este momento y otros temas nuevos como los mensajes de alerta con SweetAlert o la ventana modal con Bootstrap. Tambien la aplicación se estructura mediante carpetas: `auth`, `components`, `hooks`, `pages` y `reducers`.
 
-- Define la estructura de la aplicación, compuesta por 4 componentes, 
+Por ahora se muestran las primeras 5 fases del proyecto:
 
-- Se introduce unos datos de prueba
+### Fase 1
 
-- El estado formulario se maneja de forma interna, para los campos y el boton para subir el formulario nada más imprime los datos del formulario en la consola.
+**Proyecto**: `06-users-app-106`
 
-|                        | Archivos             |
-| ---------------------- |:--------------------:|
-| **➕ Creados (17)**     | CounterApp.jsx       |
-| **🔃 Modificados (1)** | index.html, main.jsx |
-| **🗑️ Eliminados (5)** |                      |
+- Se define la estructura inicial de la aplicación, compuesta por 4 componentes funcionales.
 
+- Se introduce unos datos de prueba para mostrarlo en la lista de usuarios.
 
+- Por el momento, el estado de los datos del formulario se maneja de forma interna.
 
-112
+- El botón para subir el formulario solamente imprime los datos que se enviarón desde el formulario en la consola.
 
-- Implementa las funcionalidades de agregar, editar y eliminar usuario.
+|                        | Archivos                                                        |
+| ---------------------- |:---------------------------------------------------------------:|
+| **➕ Creados (17)**     | `UsersApp.jsx`, `UserForm.jsx`, `UsersList.jsx` y `UserRow.jsx` |
+| **🔃 Modificados (1)** | `index.html` y `main.jsx`                                       |
+| **🗑️ Eliminados (5)** | `index.css`, `app.css` y `app.jsx`                              |
+
+### Fase 2
+
+**Proyecto**: `06-users-app-112`
+
+- Se implementa una función reducer para manejar las actualizaciones de estado relacionadas al usuario: agregar, eliminar y actualizar usuario.
+
+- Se agrega el hook useReducer en el componente principal de la aplicación.
+
+- 
+
+- Agregan prop-types para las props que se pasan entre componentes.
 
 - Además operadores ternarios para mostrar el texto del boton, un mensaje si no hay usuarios
-
-- Se implementa useReducer
-
-- Componentes modificados: UserForm, UserRow, UsersList, UsersApp
-
-- Componentes creados: usersReducer
 
 - Para editar un usuario, se requiere que introduzca la contraseña del usuario (esto se corregira en la siguiente sección)
 
 - ARCHIVOS CREADOS: usersReducer
 
 - ARCHIVOS MODIFICADOS: usersApp, usersList, userRow, userForm, 
+
+
+
+|                        | Archivos                                                       |
+| ---------------------- |:--------------------------------------------------------------:|
+| **➕ Creados(3)**       | `usersReducer.js`                                              |
+| **🔃 Modificados (2)** | `UsersApp.jsx`, `UserForm.jsx`, `UserList.jsx` y `UserRow.jsx` |
+
+
+
+
 
 117
 
@@ -390,6 +407,16 @@ npm install react-router-dom
 
 - Componentes creados useUsers.
 
+
+
+
+
+|                        | Archivos                                          |
+| ---------------------- |:-------------------------------------------------:|
+| **➕ Creados(3)**       | `products.js`, `productService.js`, `CartApp.jsx` |
+| **🔃 Modificados (2)** | `index.html`, `main.jsx`                          |
+| **🗑️ Eliminados (3)** | `index.css`, `app.css` y `app.jsx`                |
+
 123
 
 - Ventana modal en lugar de un formulario en la misma pagina web
@@ -399,6 +426,16 @@ npm install react-router-dom
 - Puedes elegir entre rederizar el formulario de inicio de sesión o la lista de usuarios para pruebas
 - COMPONENTES CREADOS: LoginPage, UserModalForm, UsersPage, styles.css
 - COMPONENTES MODIFICADOS: UserApp,  main.jsx
+
+
+
+|                        | Archivos                                          |
+| ---------------------- |:-------------------------------------------------:|
+| **➕ Creados(3)**       | `products.js`, `productService.js`, `CartApp.jsx` |
+| **🔃 Modificados (2)** | `index.html`, `main.jsx`                          |
+| **🗑️ Eliminados (3)** | `index.css`, `app.css` y `app.jsx`                |
+
+
 
 129
 
